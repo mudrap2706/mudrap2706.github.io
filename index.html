@@ -5,269 +5,319 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mudra Pandya</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
     body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-family: 'Inter', sans-serif;
         line-height: 1.6;
-        color: #1a202c;
-        background: #f7fafc;
+        color: #1a1a1a;
+        background: #fafafa;
+        font-weight: 400;
     }
     
     .container {
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 24px;
     }
     
     header {
         background: white;
-        padding: 60px 0;
-        text-align: center;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        padding: 80px 0;
+        border-bottom: 1px solid #f0f0f0;
     }
     
-    .profile-section {
-        display: flex;
+    .hero {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 60px;
         align-items: center;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
     }
     
     .profile-img {
-        width: 140px;
-        height: 140px;
+        width: 180px;
+        height: 180px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #4299e1, #9f7aea);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         display: flex;
         align-items: center;
         justify-content: center;
         color: white;
-        font-size: 2.5rem;
+        font-size: 3rem;
         font-weight: 300;
-        box-shadow: 0 8px 32px rgba(66, 153, 225, 0.3);
+        box-shadow: 0 20px 60px rgba(102, 126, 234, 0.15);
     }
     
-    .header-content {
-        text-align: left;
-        max-width: 500px;
-    }
-    
-    .header-content h1 {
-        font-size: 2.8rem;
-        margin-bottom: 8px;
-        color: #1a202c;
+    .hero-content h1 {
+        font-size: 3.2rem;
         font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
     }
     
-    .header-content .subtitle {
-        font-size: 1.1rem;
-        color: #4a5568;
-        margin-bottom: 20px;
+    .hero-content .tagline {
+        font-size: 1.3rem;
+        color: #666;
+        margin-bottom: 24px;
         font-weight: 400;
     }
     
-    .header-content .bio {
-        color: #2d3748;
+    .hero-content .bio {
+        font-size: 1.1rem;
+        color: #444;
         line-height: 1.7;
-        font-size: 1rem;
+        max-width: 500px;
     }
     
-    .nav-links {
-        margin-top: 25px;
+    .interests {
         display: flex;
-        gap: 15px;
+        gap: 12px;
+        margin-top: 24px;
         flex-wrap: wrap;
     }
     
-    .nav-links a {
-        color: #4299e1;
-        text-decoration: none;
-        font-weight: 500;
-        padding: 8px 0;
-        border-bottom: 2px solid transparent;
-        transition: all 0.3s ease;
+    .interest {
+        padding: 6px 16px;
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        color: #495057;
+        transition: all 0.2s ease;
     }
     
-    .nav-links a:hover {
-        border-bottom-color: #4299e1;
+    .interest:hover {
+        background: #667eea;
+        color: white;
+        border-color: #667eea;
+    }
+    
+    .nav {
+        margin-top: 32px;
+    }
+    
+    .nav a {
+        color: #667eea;
+        text-decoration: none;
+        margin-right: 32px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+    }
+    
+    .nav a:hover {
+        color: #5a6fd8;
     }
     
     .section {
-        background: white;
-        margin: 30px 0;
-        padding: 50px 0;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        padding: 80px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .section:last-child {
+        border-bottom: none;
     }
     
     .section h2 {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
-        color: #1a202c;
+        font-size: 2rem;
         font-weight: 600;
-        display: flex;
-        align-items: center;
+        color: #1a1a1a;
+        margin-bottom: 48px;
+        letter-spacing: -0.01em;
     }
     
-    .section h2::before {
-        content: attr(data-icon);
-        font-size: 1.5rem;
-        margin-right: 12px;
+    .education-item {
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #f8f9fa;
     }
     
-    .education-item, .experience-item {
-        margin-bottom: 25px;
-        padding: 20px;
-        background: #f7fafc;
-        border-radius: 8px;
-        border-left: 3px solid #4299e1;
+    .education-item:last-child {
+        border-bottom: none;
     }
     
-    .education-item h3, .experience-item h3 {
-        color: #1a202c;
-        margin-bottom: 8px;
-        font-weight: 600;
-    }
-    
-    .education-item .details, .experience-item .details {
-        color: #4a5568;
-        font-size: 0.95rem;
-        margin-bottom: 8px;
-    }
-    
-    .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 25px;
-    }
-    
-    .project-card {
-        background: white;
-        border-radius: 12px;
-        padding: 25px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        border: 1px solid #e2e8f0;
-        transition: all 0.3s ease;
-    }
-    
-    .project-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-    }
-    
-    .project-card h3 {
-        color: #1a202c;
-        margin-bottom: 15px;
+    .education-item h3 {
         font-size: 1.2rem;
         font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 8px;
     }
     
-    .project-links {
-        margin: 15px 0;
-        display: flex;
-        gap: 10px;
+    .education-item .meta {
+        color: #667eea;
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 8px;
     }
     
-    .project-links a {
-        padding: 6px 14px;
-        background: #4299e1;
-        color: white;
-        text-decoration: none;
-        border-radius: 6px;
-        font-size: 0.85rem;
-        transition: background 0.3s ease;
-    }
-    
-    .project-links a:hover {
-        background: #3182ce;
-    }
-    
-    .project-description {
-        color: #4a5568;
+    .education-item .description {
+        color: #666;
         font-size: 0.95rem;
         line-height: 1.6;
     }
     
-    .skills-grid {
+    .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 32px;
     }
     
-    .skill-category h4 {
-        color: #1a202c;
-        margin-bottom: 10px;
+    .project {
+        background: white;
+        border: 1px solid #f0f0f0;
+        border-radius: 12px;
+        padding: 32px;
+        transition: all 0.3s ease;
+    }
+    
+    .project:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+        border-color: #e0e0e0;
+    }
+    
+    .project h3 {
+        font-size: 1.3rem;
         font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 12px;
     }
     
-    .skill-category ul {
-        list-style: none;
+    .project-links {
+        margin: 16px 0 20px 0;
     }
     
-    .skill-category li {
-        color: #4a5568;
+    .project-links a {
+        display: inline-block;
+        margin-right: 16px;
+        color: #667eea;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
         padding: 4px 0;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease;
+    }
+    
+    .project-links a:hover {
+        border-bottom-color: #667eea;
+    }
+    
+    .project-description {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .highlight {
+        background: #f8f9ff;
+        padding: 16px;
+        border-radius: 8px;
+        border-left: 3px solid #667eea;
+        margin: 16px 0;
         font-size: 0.9rem;
     }
     
-    .skill-category li::before {
-        content: '•';
-        color: #4299e1;
-        margin-right: 8px;
+    .highlight strong {
+        color: #667eea;
+    }
+    
+    .experience-grid {
+        display: grid;
+        gap: 24px;
+    }
+    
+    .experience-item {
+        padding: 24px 0;
+        border-bottom: 1px solid #f8f9fa;
+    }
+    
+    .experience-item:last-child {
+        border-bottom: none;
+    }
+    
+    .experience-item h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        margin-bottom: 8px;
+    }
+    
+    .experience-item .meta {
+        color: #667eea;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+    
+    .experience-item .description {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.6;
     }
     
     footer {
-        background: #1a202c;
+        background: #1a1a1a;
         color: white;
+        padding: 60px 0;
         text-align: center;
-        padding: 40px 0;
-        margin-top: 50px;
+    }
+    
+    .footer-content h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 24px;
     }
     
     .footer-links {
         display: flex;
         justify-content: center;
-        gap: 20px;
-        margin: 20px 0;
+        gap: 32px;
+        margin: 24px 0;
         flex-wrap: wrap;
     }
     
     .footer-links a {
-        color: #4299e1;
+        color: #999;
         text-decoration: none;
-        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
     }
     
     .footer-links a:hover {
-        color: #63b3ed;
+        color: #667eea;
+    }
+    
+    .footer-note {
+        color: #666;
+        font-size: 0.85rem;
+        margin-top: 32px;
     }
     
     @media (max-width: 768px) {
-        .header-content h1 {
-            font-size: 2.2rem;
+        .hero {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 40px;
         }
         
-        .profile-section {
-            flex-direction: column;
-            text-align: center;
-        }
-        
-        .header-content {
-            text-align: center;
+        .hero-content h1 {
+            font-size: 2.4rem;
         }
         
         .projects-grid {
             grid-template-columns: 1fr;
         }
         
-        .nav-links {
-            justify-content: center;
+        .footer-links {
+            flex-direction: column;
+            gap: 16px;
         }
     }
 </style>
@@ -275,198 +325,152 @@
 <body>
     <header>
         <div class="container">
-            <div class="profile-section">
+            <div class="hero">
                 <img src="profile.jpg" alt="Mudra Pandya" class="profile-img" style="object-fit: cover;">
-                <div class="header-content">
+                <div class="hero-content">
                     <h1>Mudra Pandya</h1>
-                    <p class="subtitle">Information Systems • Machine Learning • Technical Research</p>
-                    <p class="bio">I combine technical expertise with research innovation, specializing in machine learning applications and human-centered technology design. Currently advancing data science methodologies while exploring the intersection of AI and user experience.</p>
-                    <div class="nav-links">
-                        <a href="#education">Education</a>
-                        <a href="#research">Research</a>
-                        <a href="#experience">Experience</a>
-                        <a href="#contact">Contact</a>
-                    </div>
+                    <p class="tagline">Technical Researcher & Systems Designer</p>
+                    <p class="bio">I design human-centered technology solutions through research, analysis, and thoughtful implementation. My work spans machine learning applications, user experience research, and technical communication.</p>
+                <div class="interests">
+                    <span class="interest">Human-Computer Interaction</span>
+                    <span class="interest">Machine Learning</span>
+                    <span class="interest">User Experience</span>
+                    <span class="interest">Technical Writing</span>
+                </div>
+                
+                <div class="nav">
+                    <a href="#education">Education</a>
+                    <a href="#research">Research</a>
+                    <a href="#experience">Experience</a>
+                    <a href="mailto:pandya.mu@northeastern.edu">Contact</a>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
+
 <section id="education" class="section">
     <div class="container">
-        <h2 data-icon="🎓">Education</h2>
+        <h2>Education</h2>
         
         <div class="education-item">
             <h3>M.S. in Information Systems</h3>
-            <p class="details">Northeastern University - Toronto • GPA: 4.0 • Expected 2025</p>
-            <p>Advanced coursework in Data Science Engineering, Machine Learning Applications, and Database Architecture</p>
+            <p class="meta">Northeastern University - Toronto • GPA: 4.0 • 2025</p>
+            <p class="description">Data Science Engineering Methods, Advanced Machine Learning, Database Architecture</p>
         </div>
         
         <div class="education-item">
             <h3>Postgraduate Diploma in Mobile Application Development</h3>
-           <p class="details">Centennial College • GPA: 4.2</p>
+            <p class="meta">GPA: 4.2</p>
+            <p class="description">Full-stack development, user interface design, mobile systems</p>
         </div>
         
         <div class="education-item">
             <h3>Bachelor of Computer Applications</h3>
-            <p class="details">First Class with Distinction • GPA: 4.0</p>
+            <p class="meta">First Class with Distinction • GPA: 4.0</p>
+            <p class="description">Computer science fundamentals, programming, systems analysis</p>
         </div>
     </div>
 </section>
 
 <section id="research" class="section">
     <div class="container">
-        <h2 data-icon="⚡">Featured Research</h2>
+        <h2>Featured Work</h2>
         
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project">
                 <h3>Machine Learning for Predictive Analytics</h3>
                 <div class="project-links">
-                    <a href="https://www.researchgate.net/publication/394347599_Machine_Learning_Report">ResearchGate</a>
-                    <a href="#">Medium</a>
+                    <a href="https://www.researchgate.net/publication/394347599_Machine_Learning_Report">Research Paper</a>
+                    <a href="https://medium.com/@mudrawork27">Analysis</a>
                 </div>
-                <p class="project-description">Comprehensive analysis using ensemble methods (XGBoost, Random Forest) achieving 100% accuracy in classification tasks. Applied SMOTE balancing and statistical validation across multiple datasets.</p>
+                <p class="project-description">Ensemble methods analysis achieving 100% accuracy in classification tasks. Applied advanced statistical validation across healthcare and financial datasets using XGBoost, Random Forest, and neural networks.</p>
+                <div class="highlight">
+                    <strong>Impact:</strong> Demonstrated ensemble method superiority and developed interpretable models for high-stakes applications
+                </div>
             </div>
 
-            <div class="project-card">
-                <h3>Database Systems & Query Optimization</h3>
+            <div class="project">
+                <h3>National Pension System: User Experience Design</h3>
                 <div class="project-links">
-                    <a href="#">Technical Report</a>
+                    <a href="#">UX Documentation</a>
+                    <a href="#">Process Design</a>
                 </div>
-                <p class="project-description">Advanced relational database design and complex multi-table query optimization, demonstrating 15% efficiency improvements in data retrieval and management systems.</p>
+                <p class="project-description">Human-centered design for India's National Pension System online registration. Created comprehensive user manuals and compliance guides, focusing on accessibility for elderly users and complex regulatory navigation.</p>
+                <div class="highlight">
+                    <strong>Impact:</strong> Simplified pension fund operations for millions of users through clear governance documentation and user-friendly process design
+                </div>
             </div>
 
-<div class="project-card">
-    <h3>Human-Computer Interaction in Digital Transformation</h3>
-    <div class="project-links">
-        <a href="https://www.prismetric.com/case-studies/">Industry Case Studies</a>
-        <a href="https://medium.com/@mudrawork27">Research Articles</a>
-    </div>
-    <p class="project-description">Comprehensive analysis of how emerging technologies reshape human-technology interactions. Research includes mobile commerce user behavior evolution, Industry 4.0's impact on human-machine collaboration, and user experience patterns in enterprise software adoption. Published 300+ articles examining the intersection of technology advancement and human-centered design principles.</p>
-</div>
+            <div class="project">
+                <h3>FlowCart: Supporting Women Entrepreneurs</h3>
+                <div class="project-links">
+                    <a href="https://github.com/yh0416/Final-Project-5100">GitHub</a>
+                    <a href="#">Demo</a>
+                </div>
+                <p class="project-description">Full-stack delivery management platform designed for female-driven small businesses. Implemented role-based interfaces and workflow optimization using JavaFX and MySQL architecture.</p>
+                <div class="highlight">
+                    <strong>Impact:</strong> Streamlined operations for underserved business communities through user-centered interface design
+                </div>
+            </div>
 
-<div class="project-card">
-    <h3>FlowCart: Empowering Female-Driven Small Businesses</h3>
-    <div class="project-links">
-        <a href="https://github.com/yh0416/Final-Project-5100">GitHub Repository</a>
-        <a href="#">UX Research</a>
-    </div>
-    <p class="project-description">Full-stack application addressing operational challenges faced by female-driven small business owners through intuitive interface design. Features role-based user experiences, real-time interaction patterns, and workflow optimization tailored for women entrepreneurs. Implemented user-centered design principles in JavaFX with MySQL backend, focusing on accessibility and operational efficiency for underserved business communities.</p>
-</div>
+            <div class="project">
+                <h3>Digital Commerce Evolution Research</h3>
+                <div class="project-links">
+                    <a href="https://www.prismetric.com/case-studies/">Case Studies</a>
+                    <a href="https://medium.com/@mudrawork27">Research Articles</a>
+                </div>
+                <p class="project-description">Comprehensive analysis of human behavior in digital commerce transitions. Research on mobile-first user experience patterns and technology adoption across 300+ published technical articles.</p>
+                <div class="highlight">
+                    <strong>Impact:</strong> Identified key principles in human-technology interaction driving mobile commerce adoption
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <section id="experience" class="section">
     <div class="container">
-        <h2 data-icon="💼">Professional Experience</h2>
+        <h2>Experience</h2>
         
-        <div class="experience-item">
-            <h3>Technical Writer & Research Analyst</h3>
-            <p class="details">4+ Years • Technology & AI Research</p>
-            <p>Authored 300+ technical articles on AI, cybersecurity, and emerging technologies. Specialized in translating complex technical concepts into accessible content while maintaining accuracy and depth.</p>
-        </div>
-        
-        <div class="experience-item">
-            <h3>Social Media Manager & Content Strategist</h3>
-            <p class="details">Cross-functional Leadership Role</p>
-            <p>Led content strategy and audience engagement initiatives, demonstrating project coordination and communication skills in dynamic environments.</p>
-        </div>
-        
-        <div class="experience-item">
-            <h3>Academic Research Assistant</h3>
-            <p class="details">Northeastern University - Toronto</p>
-            <p>Advanced coursework excellence with focus on machine learning applications, database systems, and data science methodologies.</p>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <h2 data-icon="🛠">Technical Competencies</h2>
-        
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h4>Programming & Development</h4>
-                <ul>
-                    <li>Python, SQL, Java</li>
-                    <li>JavaScript, PHP, HTML, CSS</li>
-                    <li>Full-stack Web Development</li>
-                </ul>
+        <div class="experience-grid">
+            <div class="experience-item">
+                <h3>Technical Writer & UX Researcher</h3>
+                <p class="meta">Prismetric Technologies • 3+ Years</p>
+                <p class="description">Published 300+ technical articles analyzing user experience patterns, technology adoption trends, and digital transformation strategies. Specialized in translating complex technical concepts into accessible, user-centered content.</p>
             </div>
             
-            <div class="skill-category">
-                <h4>Data Science & Analytics</h4>
-                <ul>
-                    <li>Machine Learning (XGBoost, Random Forest)</li>
-                    <li>Statistical Analysis & Modeling</li>
-                    <li>Power BI, Tableau, Google Analytics</li>
-                </ul>
+            <div class="experience-item">
+                <h3>UX Documentation Specialist</h3>
+                <p class="meta">Gujarat Infotech • Internship</p>
+                <p class="description">Designed user experience documentation for India's National Pension System, focusing on accessibility for elderly users and complex regulatory compliance. Created step-by-step process guides for government digital services.</p>
             </div>
             
-            <div class="skill-category">
-                <h4>Database Systems</h4>
-                <ul>
-                    <li>MySQL, Oracle, MS SQL</li>
-                    <li>Query Optimization</li>
-                    <li>Relational Database Design</li>
-                </ul>
-            </div>
-            
-            <div class="skill-category">
-                <h4>Research & Communication</h4>
-                <ul>
-                    <li>Technical Writing (300+ articles)</li>
-                    <li>Research Methodology</li>
-                    <li>Data Visualization</li>
-                </ul>
+            <div class="experience-item">
+                <h3>Research Assistant</h3>
+                <p class="meta">Northeastern University - Toronto</p>
+                <p class="description">Advanced coursework in machine learning applications and data science methodologies. Focus on human-centered AI design and ethical technology development.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section">
+<footer>
     <div class="container">
-        <h2 data-icon="📚">Publications & Writing</h2>
-        
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Academic Research Publications</h3>
-                <div class="project-links">
-                    <a href="https://www.researchgate.net/profile/Mudra-Pandya-2?ev=hdr_xprf">ResearchGate</a>
-                    <a href="#">Google Scholar</a>
-                </div>
-                <p class="project-description">Machine learning research, statistical analysis, and computational methods with focus on real-world applications and methodology validation.</p>
+        <div class="footer-content">
+            <h3>Let's Connect</h3>
+            <p style="color: #999; margin-bottom: 24px;">pandya.mu@northeastern.edu • Toronto, Canada</p>
+            
+            <div class="footer-links">
+                <a href="https://www.researchgate.net/profile/Mudra-Pandya">ResearchGate</a>
+                <a href="https://medium.com/@mudrawork27">Medium</a>
+                <a href="#">Google Scholar</a>
+                <a href="https://linkedin.com/in/mudrapandya">LinkedIn</a>
+                <a href="https://github.com/mudrap2706">GitHub</a>
             </div>
-
-            <div class="project-card">
-                <h3>Technical Writing Portfolio</h3>
-                <div class="project-links">
-                    <a href="https://medium.com/@mudrapandya">Medium</a>
-                    <a href="#">Industry Reports</a>
-                </div>
-                <p class="project-description">300+ published articles covering AI, cybersecurity, emerging technologies, and industry analysis. Specialized in making complex technical concepts accessible.</p>
-            </div>
+            
+            <p class="footer-note">© 2025 Mudra Pandya</p>
         </div>
-    </div>
-</section>
-
-<footer id="contact">
-    <div class="container">
-        <h3 style="margin-bottom: 20px; font-size: 1.4rem;">Let's Connect</h3>
-        <p style="margin-bottom: 25px; color: #a0aec0;">
-            <strong>Email:</strong> <a href="mailto:pandya.mu@northeastern.edu" style="color: #4299e1;">pandya.mu@northeastern.edu</a><br>
-            <strong>Location:</strong> Toronto, Ontario, Canada
-        </p>
-        
-        <div class="footer-links">
-            <a href="https://www.researchgate.net/profile/Mudra-Pandya">ResearchGate</a>
-            <a href="https://medium.com/@mudrapandya">Medium</a>
-            <a href="#">Google Scholar</a>
-            <a href="https://linkedin.com/in/mudrapandya">LinkedIn</a>
-            <a href="https://github.com/mudrap2706">GitHub</a>
-        </div>
-        
-        <p style="margin-top: 30px; color: #718096; font-size: 0.9rem;">© 2025 Mudra Pandya</p>
     </div>
 </footer>
 </body>
