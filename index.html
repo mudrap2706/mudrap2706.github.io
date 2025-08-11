@@ -6,35 +6,21 @@
         background: #fff;
         max-width: 900px;
         margin: 0 auto;
-        padding: 30px 20px;
+        padding: 20px;
     }
     
     .header {
         display: flex;
         align-items: flex-start;
-        gap: 30px;
-        margin-bottom: 30px;
+        gap: 25px;
+        margin-bottom: 25px;
     }
     
     .profile-img {
-        width: 180px;
-        height: 180px;
-        border-radius: 12px;
+        width: 160px;
+        height: 200px;
+        border-radius: 8px;
         object-fit: cover;
-        flex-shrink: 0;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    
-    .profile-placeholder {
-        width: 180px;
-        height: 180px;
-        border-radius: 12px;
-        background: #f0f0f0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        color: #999;
         flex-shrink: 0;
     }
     
@@ -42,17 +28,17 @@
         font-size: 2.5rem;
         font-weight: 300;
         color: #2c5aa0;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
     }
     
     .nav-links {
-        margin: 10px 0 15px 0;
+        margin: 8px 0 12px 0;
     }
     
     .nav-links a {
         color: #2c5aa0;
         text-decoration: none;
-        margin-right: 15px;
+        margin-right: 12px;
         font-weight: 500;
         font-size: 0.9rem;
     }
@@ -60,32 +46,33 @@
     .quote {
         font-style: italic;
         color: #666;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         line-height: 1.5;
+        font-size: 0.95rem;
     }
     
     .bio {
         color: #333;
         line-height: 1.6;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
     
     .section {
-        margin-bottom: 30px;
+        margin-bottom: 25px;
     }
     
     .section h2 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 600;
         color: #333;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         display: flex;
         align-items: center;
     }
     
     .section h2::before {
-        font-size: 1.3rem;
-        margin-right: 8px;
+        font-size: 1.2rem;
+        margin-right: 6px;
     }
     
     .education h2::before { content: '🎓'; }
@@ -94,8 +81,8 @@
     .interests h2::before { content: '🌟'; }
     
     .education-item, .experience-item {
-        margin-bottom: 15px;
-        padding-bottom: 10px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
         border-bottom: 1px solid #f0f0f0;
     }
     
@@ -105,27 +92,27 @@
     
     .education-item h3, .experience-item h3 {
         color: #333;
-        font-size: 1rem;
+        font-size: 0.95rem;
         font-weight: 600;
-        margin-bottom: 3px;
+        margin-bottom: 2px;
     }
     
     .education-item .details, .experience-item .details {
         color: #2c5aa0;
-        font-size: 0.85rem;
-        margin-bottom: 3px;
+        font-size: 0.8rem;
+        margin-bottom: 2px;
         font-weight: 500;
     }
     
     .education-item p, .experience-item p {
         color: #555;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         line-height: 1.4;
     }
     
     .project {
-        margin-bottom: 25px;
-        padding-bottom: 20px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
         border-bottom: 1px solid #eee;
     }
     
@@ -135,79 +122,75 @@
     
     .project h3 {
         color: #2c5aa0;
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 600;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
     }
     
     .project-links {
-        margin: 8px 0 10px 0;
+        margin: 5px 0 8px 0;
     }
     
     .project-links a {
         color: #2c5aa0;
         text-decoration: none;
-        margin-right: 12px;
-        font-size: 0.85rem;
+        margin-right: 10px;
+        font-size: 0.8rem;
         font-weight: 500;
     }
     
     .project-image {
         width: 100%;
-        max-width: 500px;
-        height: 200px;
+        max-width: 450px;
+        height: 180px;
         background: #f8f8f8;
         border: 2px dashed #ddd;
-        border-radius: 6px;
+        border-radius: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #999;
-        font-size: 0.85rem;
-        margin: 10px 0;
+        font-size: 0.8rem;
+        margin: 8px 0;
     }
     
     .project-description {
         color: #555;
         line-height: 1.5;
-        margin-bottom: 8px;
-        font-size: 0.9rem;
+        margin-bottom: 5px;
+        font-size: 0.85rem;
     }
     
     .project-results {
         background: #f8f9fa;
-        padding: 12px;
+        padding: 10px;
         border-radius: 4px;
         border-left: 3px solid #2c5aa0;
-        margin-top: 10px;
+        margin-top: 8px;
     }
     
     .project-results h4 {
         color: #333;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: 600;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
     }
     
     .project-results ul {
-        margin-left: 15px;
+        margin-left: 12px;
     }
     
     .project-results li {
         color: #555;
-        margin-bottom: 3px;
-        font-size: 0.85rem;
-    }
-    
-    .beyond-section {
-        margin-bottom: 25px;
+        margin-bottom: 2px;
+        font-size: 0.8rem;
     }
     
     .beyond-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 12px;
-        margin-top: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 10px;
+        margin-top: 10px;
     }
     
     .beyond-item {
@@ -215,44 +198,51 @@
     }
     
     .beyond-image {
-        width: 90px;
-        height: 90px;
-        border-radius: 8px;
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
+        object-fit: cover;
+        margin: 0 auto 5px;
+    }
+    
+    .beyond-placeholder {
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
         background: #f0f0f0;
         border: 2px dashed #ccc;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 6px;
+        margin: 0 auto 5px;
         color: #999;
         font-size: 0.7rem;
-        text-align: center;
     }
     
     .beyond-label {
         color: #555;
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         font-weight: 500;
     }
     
     .contact {
         text-align: center;
-        margin-top: 30px;
-        padding-top: 20px;
+        margin-top: 25px;
+        padding-top: 15px;
         border-top: 1px solid #eee;
     }
     
     .contact h3 {
         color: #333;
-        font-size: 1.3rem;
-        margin-bottom: 12px;
+        font-size: 1.2rem;
+        margin-bottom: 8px;
     }
     
     .contact-links {
         display: flex;
         justify-content: center;
-        gap: 15px;
-        margin: 15px 0;
+        gap: 12px;
+        margin: 10px 0;
         flex-wrap: wrap;
     }
     
@@ -260,7 +250,7 @@
         color: #2c5aa0;
         text-decoration: none;
         font-weight: 500;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
     
     @media (max-width: 768px) {
@@ -270,27 +260,25 @@
             gap: 15px;
         }
         
-        .header-content h1 {
-            font-size: 2rem;
-        }
-        
         .beyond-grid {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 </style>
-</head> <body> <header class="header"> <!-- PHOTO 1: Your square professional headshot here --> <img src="profile.jpg" alt="Mudra Pandya" class="profile-img">
+</head> <body> <header class="header"> <!-- PHOTO 1: Your rectangular professional headshot --> <img src="profile.jpg" alt="Mudra Pandya" class="profile-img">
     <div class="header-content">
         <h1>Mudra Pandya</h1>
         <div class="nav-links">
             <a href="#education">Education</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Research</a>
-            <a href="#interests">Beyond</a>
+            <a href="#interests">Interests</a>
         </div>
-        <p class="quote">"I create technology that serves humanity through research, empathy, and thoughtful design."</p>
+        <p class="quote">"I design human-centered technology solutions through research, creativity, and empathy."</p>
         <div class="bio">
-            <p>Master's student in Information Systems at Northeastern University - Toronto, specializing in human-centered AI applications and accessible technology design. My work bridges machine learning research with real-world social impact.</p>
+            <p>Master's student in Information Systems at Northeastern University - Toronto, focusing on machine learning applications in healthcare and accessible technology design. My work combines technical expertise with artistic creativity to create meaningful impact.</p>
+            
+            <p>This portfolio showcases research in AI applications, accessible design for vulnerable populations, and the intersection of technology with human experience.</p>
         </div>
     </div>
 </header>
@@ -301,7 +289,7 @@
     <div class="education-item">
         <h3>M.S. in Information Systems</h3>
         <p class="details">Northeastern University - Toronto • GPA: 4.0 • Expected 2025</p>
-        <p>Data Science Engineering, Machine Learning Applications, Database Architecture</p>
+        <p>Data Science Engineering Methods, Advanced Machine Learning, Database Architecture</p>
     </div>
     
     <div class="education-item">
@@ -321,19 +309,19 @@
     <div class="experience-item">
         <h3>Technical Writer & UX Researcher</h3>
         <p class="details">Prismetric Technologies • 3+ Years</p>
-        <p>300+ technical articles on AI, UX, and digital transformation trends</p>
+        <p>300+ technical articles on AI, user experience, and digital transformation</p>
     </div>
     
     <div class="experience-item">
-        <h3>UX Designer - Government Systems</h3>
+        <h3>UX Designer - Government Digital Services</h3>
         <p class="details">Gujarat Infotech</p>
         <p>National Pension System accessibility design for elderly users</p>
     </div>
     
     <div class="experience-item">
-        <h3>Community Volunteer</h3>
-        <p class="details">COVID-19 Response • RCIScience Communication</p>
-        <p>Pandemic support and science communication initiatives</p>
+        <h3>Research Assistant</h3>
+        <p class="details">Northeastern University - Toronto</p>
+        <p>Machine learning research and data science applications</p>
     </div>
 </section>
 
@@ -343,22 +331,23 @@
     <div class="project">
         <h3>Healthcare AI: Machine Learning for Medical Prediction</h3>
         <div class="project-links">
-            <a href="https://www.researchgate.net/publication/394347599_Machine_Learning_Report">Research Paper</a>
+            <a href="https://www.researchgate.net/publication/394347599_Machine_Learning_Report">Read Full Paper</a>
             <a href="https://medium.com/@mudrawork27">Medium Article</a>
         </div>
         
-        <!-- PHOTO 2: Add ML research visualization (confusion matrix, charts) -->
-        <div class="project-image">📊 Add ML Research Visualization</div>
+        <!-- PHOTO 2: Add ML research visualization -->
+        <img src="ml_research.jpg" alt="ML Research Results" class="project-image">
         
-        <p class="project-description"><strong>Challenge:</strong> Ensemble machine learning for healthcare prediction addressing data imbalance and clinical interpretability.</p>
-        <p class="project-description"><strong>Solution:</strong> XGBoost, Random Forest, Neural Networks with SMOTE balancing and statistical validation.</p>
+        <p class="project-description"><strong>Challenge:</strong> Developed ensemble machine learning models for healthcare prediction tasks, addressing critical issues of data imbalance and clinical interpretability in medical AI systems.</p>
+        
+        <p class="project-description"><strong>Solution:</strong> Implemented XGBoost, Random Forest, and Neural Networks with SMOTE balancing techniques and comprehensive statistical validation.</p>
         
         <div class="project-results">
             <h4>Impact & Results:</h4>
             <ul>
-                <li><strong>100% prediction accuracy</strong> using ensemble methods</li>
-                <li>Addressed severe class imbalance in medical datasets</li>
-                <li>Developed interpretable models for clinical applications</li>
+                <li>Achieved <strong>100% prediction accuracy</strong> using ensemble methods</li>
+                <li>Successfully addressed severe class imbalance in medical datasets</li>
+                <li>Developed interpretable models suitable for clinical applications</li>
             </ul>
         </div>
     </div>
@@ -366,101 +355,87 @@
     <div class="project">
         <h3>FlowCart: Empowering Female Entrepreneurs</h3>
         <div class="project-links">
-            <a href="https://github.com/yh0416/Final-Project-5100">GitHub Repository</a>
-            <a href="#">Demo</a>
+            <a href="https://github.com/yh0416/Final-Project-5100">Open in GitHub</a>
+            <a href="#">View Demo</a>
         </div>
         
         <!-- PHOTO 3: Add FlowCart app screenshots -->
-        <div class="project-image">💻 Add FlowCart App Screenshots</div>
+        <img src="flowcart_app.jpg" alt="FlowCart Application" class="project-image">
         
-        <p class="project-description"><strong>Challenge:</strong> Delivery management platform for female-driven small businesses.</p>
-        <p class="project-description"><strong>Solution:</strong> JavaFX and MySQL with role-based interfaces and real-time tracking.</p>
+        <p class="project-description"><strong>Challenge:</strong> Delivery management platform specifically designed for female-driven small businesses, addressing operational challenges through user-centered design.</p>
+        
+        <p class="project-description"><strong>Solution:</strong> Full-stack application using JavaFX and MySQL with role-based interfaces, real-time tracking, and workflow optimization.</p>
         
         <div class="project-results">
             <h4>Impact & Results:</h4>
             <ul>
-                <li>Streamlined operations for women entrepreneurs</li>
-                <li>Role-based access control for different user types</li>
-                <li>Intuitive interfaces reducing operational complexity</li>
+                <li>Streamlined delivery operations for women entrepreneurs</li>
+                <li>Implemented role-based access control for different user types</li>
+                <li>Created intuitive interfaces reducing operational complexity</li>
             </ul>
         </div>
     </div>
 
     <div class="project">
-        <h3>National Pension System: Accessible Design for Elderly</h3>
+        <h3>National Pension System: Accessible Design for Elderly Users</h3>
         <div class="project-links">
             <a href="#">UX Documentation</a>
             <a href="#">Process Design</a>
         </div>
         
         <!-- PHOTO 4: Add NPS interface screenshots -->
-        <div class="project-image">🏛️ Add NPS Interface Screenshots</div>
+        <img src="nps_interface.jpg" alt="NPS User Interface" class="project-image">
         
-        <p class="project-description"><strong>Challenge:</strong> Government system accessibility for elderly users navigating complex regulations.</p>
-        <p class="project-description"><strong>Solution:</strong> User manuals and accessible interface design for senior citizens.</p>
+        <p class="project-description"><strong>Challenge:</strong> Government system interface design focusing on accessibility for elderly users navigating complex pension regulations and compliance requirements.</p>
+        
+        <p class="project-description"><strong>Solution:</strong> Comprehensive user manuals and accessible interface design with step-by-step process guides for senior citizens.</p>
         
         <div class="project-results">
             <h4>Impact & Results:</h4>
             <ul>
-                <li>Simplified process for <strong>millions of users</strong></li>
-                <li>Improved elderly accessibility in government services</li>
-                <li>Clear documentation for complex regulatory processes</li>
+                <li>Simplified pension registration for <strong>millions of users</strong></li>
+                <li>Improved elderly accessibility in government digital services</li>
+                <li>Created clear documentation for complex regulatory processes</li>
             </ul>
         </div>
     </div>
 </section>
 
-<section id="interests" class="section beyond-section">
-    <h2>Beyond Research</h2>
-    
-    <p style="color: #555; margin-bottom: 15px; font-size: 0.9rem;">What keeps me creative and connected to the human experience:</p>
+<section id="interests" class="section interests">
+    <h2>Interests</h2>
     
     <div class="beyond-grid">
         <div class="beyond-item">
             <!-- PHOTO 5: Mountain trekking photo -->
-            <div class="beyond-image">🏔️ Mountain Trekking</div>
+            <img src="trekking.jpg" alt="Mountain Trekking" class="beyond-image">
             <p class="beyond-label">Trekking</p>
         </div>
         
         <div class="beyond-item">
-            <!-- PHOTO 6: Food/cultural photo -->
-            <div class="beyond-image">🍜 Food Culture</div>
-            <p class="beyond-label">Food Explorer</p>
+            <!-- PHOTO 6: Food exploration photo -->
+            <img src="food_culture.jpg" alt="Food Culture" class="beyond-image">
+            <p class="beyond-label">Food Culture</p>
         </div>
         
         <div class="beyond-item">
             <!-- PHOTO 7: String art creation -->
-            <div class="beyond-image">🎨 String Art</div>
+            <img src="string_art.jpg" alt="String Art" class="beyond-image">
             <p class="beyond-label">String Art</p>
         </div>
         
         <div class="beyond-item">
             <!-- PHOTO 8: Resin art creation -->
-            <div class="beyond-image">✨ Resin Art</div>
+            <img src="resin_art.jpg" alt="Resin Art" class="beyond-image">
             <p class="beyond-label">Resin Art</p>
         </div>
-        
-        <div class="beyond-item">
-            <!-- PHOTO 9: Volunteer work -->
-            <div class="beyond-image">🤝 Volunteer Work</div>
-            <p class="beyond-label">Community Service</p>
-        </div>
-        
-        <div class="beyond-item">
-            <!-- PHOTO 10: Science communication -->
-            <div class="beyond-image">🔬 Science Comm</div>
-            <p class="beyond-label">Science Communication</p>
-        </div>
     </div>
-    
-    <p style="color: #666; font-style: italic; margin-top: 15px; text-align: center; font-size: 0.85rem;">Artist • Adventurer • Advocate • Researcher</p>
 </section>
 
 <footer class="contact">
-    <h3 style="color: #333; font-size: 1.3rem; margin-bottom: 12px;">Contact</h3>
-    <p style="color: #555; margin-bottom: 15px; font-size: 0.9rem;">
-        <strong>Email:</strong> pandya.mu@northeastern.edu<br>
-        <strong>Location:</strong> Toronto, Ontario, Canada
+    <h3>Contact</h3>
+    <p style="color: #555; margin-bottom: 10px; font-size: 0.9rem;">
+        pandya.mu@northeastern.edu<br>
+        Toronto, Ontario, Canada
     </p>
     
     <div class="contact-links">
@@ -471,6 +446,6 @@
         <a href="https://github.com/mudrap2706">GitHub</a>
     </div>
     
-    <p style="color: #999; font-size: 0.8rem; margin-top: 20px;">© 2025 Mudra Pandya</p>
+    <p style="color: #999; font-size: 0.75rem; margin-top: 15px;">© 2025 Mudra Pandya</p>
 </footer>
 </body> </html>
