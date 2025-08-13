@@ -1,4 +1,6 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Mudra Pandya</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; }
+    .section h2 {
+        <!DOCTYPE html>
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Mudra Pandya</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         line-height: 1.6;
@@ -72,19 +74,12 @@
         font-weight: 600;
         color: #333;
         margin-bottom: 8px;
-        display: flex;
-        align-items: center;
     }
     
-    .section h2::before {
-        font-size: 1.1rem;
-        margin-right: 6px;
-    }
-    
-    .education h2::before { content: '🎓'; }
-    .experience h2::before { content: '💼'; }
-    .projects h2::before { content: '📝'; }
-    .interests h2::before { content: '🌟'; }
+    .education h2 { }
+    .experience h2 { }
+    .projects h2 { }
+    .interests h2 { }
     
     .education-item, .experience-item {
         margin-bottom: 8px;
@@ -147,11 +142,14 @@
     
     .project-image {
         width: 100%;
-        max-width: 400px;
-        height: 150px;
+        max-width: 500px;
+        height: auto;
         border-radius: 4px;
         margin: 6px 0;
-        object-fit: cover;
+        object-fit: scale-down;
+        background: #f8f8f8;
+        border: 1px solid #e0e0e0;
+        display: block;
     }
     
     .project-description {
@@ -405,9 +403,8 @@
         my approach to human-centered design.
     </p>
     
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 10px; border-radius: 8px; overflow: hidden;">
-        <img src="trekking.jpg" alt="Mountain Trekking" style="width: 100%; height: 100px; object-fit: cover;">
-        <img src="food_culture.jpg" alt="Food Culture" style="width: 100%; height: 100px; object-fit: cover;">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; border-radius: 8px; overflow: hidden;">
+        <img src="E3414DD2-320A-4A9E-BD0E-9721716D18AB_Original.jpg" alt="Mountain Trekking" style="width: 100%; height: 100px; object-fit: cover;">
         <img src="FullSizeRender.jpeg" alt="String Art" style="width: 100%; height: 100px; object-fit: cover;">
         <img src="IMG_0509.jpeg" alt="Resin Art" style="width: 100%; height: 100px; object-fit: cover;">
     </div>
