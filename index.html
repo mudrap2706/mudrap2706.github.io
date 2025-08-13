@@ -1,6 +1,4 @@
-    .section h2 {
-        <!DOCTYPE html>
-<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Mudra Pandya</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; }
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Mudra Pandya</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         line-height: 1.6;
@@ -142,13 +140,13 @@
     
     .project-image {
         width: 100%;
-        max-width: 450px;
         height: 200px;
         border-radius: 4px;
         margin: 6px 0;
         object-fit: contain;
         background: #f8f8f8;
         border: 1px solid #e0e0e0;
+        display: block;
     }
     
     .project-description {
@@ -181,34 +179,6 @@
         color: #555;
         margin-bottom: 1px;
         font-size: 0.75rem;
-    }
-    
-    .beyond-grid {
-        display: flex;
-        gap: 15px;
-        margin-top: 8px;
-        flex-wrap: wrap;
-    }
-    
-    .beyond-item {
-        text-align: center;
-        flex: 1;
-        min-width: 80px;
-    }
-    
-    .beyond-image {
-        width: 80px;
-        height: 80px;
-        border-radius: 6px;
-        object-fit: cover;
-        margin: 0 auto 4px;
-        display: block;
-    }
-    
-    .beyond-label {
-        color: #555;
-        font-size: 0.7rem;
-        font-weight: 500;
     }
     
     .contact {
@@ -245,13 +215,9 @@
             text-align: center;
             gap: 15px;
         }
-        
-        .beyond-grid {
-            justify-content: center;
-        }
     }
 </style>
-</head> <body> <header class="header"> <!-- PHOTO 1: Your rectangular professional headshot --> <img src="profile.jpg" alt="Mudra Pandya" class="profile-img">
+</head> <body> <header class="header"> <img src="profile.jpg" alt="Mudra Pandya" class="profile-img">
     <div class="header-content">
         <h1>Mudra Pandya</h1>
         <div class="nav-links">
@@ -262,9 +228,9 @@
         </div>
         <p class="quote">"The best way to predict the future is to create it." — Peter Drucker</p>
         <div class="bio">
-            <p>Master's student in Information Systems at Northeastern University - Toronto, focusing on machine learning applications in healthcare and accessible technology design. My work bridges technical innovation with human-centered design principles.</p>
+            <p>Master's student in Information Systems at Northeastern University - Toronto, focusing on machine learning applications in healthcare and accessible technology design. Research combines technical expertise with user experience principles.</p>
             
-            <p>Professional experience includes 300+ published technical articles, government UX design for elderly accessibility, and full-stack development for underserved communities. Research interests center on inclusive AI systems and technology equity.</p>
+            <p>Professional background includes extensive technical writing, government UX design, and full-stack development. Current work centers on inclusive AI systems and technology accessibility for diverse populations.</p>
         </div>
     </div>
 </header>
@@ -303,7 +269,7 @@
     <div class="experience-item">
         <h3>UX Designer - Government Digital Services</h3>
         <p class="details">Gujarat Infotech • Internship</p>
-        <p>National Pension System accessibility design focusing on elderly user experience and regulatory compliance navigation.</p>
+        <p class="description">National Pension System accessibility design focusing on elderly user experience and regulatory compliance navigation.</p>
     </div>
     
     <div class="experience-item">
@@ -329,7 +295,6 @@
             <a href="https://medium.com/@mudrawork27">Medium Article</a>
         </div>
         
-        <!-- PHOTO 2: Add ML research visualization -->
         <img src="ml_research.png" alt="ML Research Results" class="project-image">
         
         <p class="project-description"><strong>Challenge:</strong> Ensemble machine learning models for healthcare prediction addressing data imbalance and clinical interpretability.</p>
@@ -352,11 +317,10 @@
             <a href="#">View Demo</a>
         </div>
         
-        <!-- PHOTO 3: Add FlowCart app screenshots -->
         <img src="flowcart_app.png" alt="FlowCart Application" class="project-image">
         
-        <p class="project-description"><strong>Challenge:</strong> Delivery platform for female-driven small businesses.</p>
-        <p class="project-description"><strong>Solution:</strong> JavaFX and MySQL with role-based interfaces.</p>
+        <p class="project-description"><strong>Challenge:</strong> Delivery platform for female-driven small businesses addressing operational challenges.</p>
+        <p class="project-description"><strong>Solution:</strong> JavaFX and MySQL with role-based interfaces and real-time tracking.</p>
         
         <div class="project-results">
             <h4>Impact & Results:</h4>
@@ -375,7 +339,6 @@
             <a href="#">UX Process Design</a>
         </div>
         
-        <!-- PHOTO 4: Add NPS interface screenshots -->
         <img src="nps_interface.png" alt="NPS User Interface" class="project-image">
         
         <p class="project-description"><strong>Challenge:</strong> Government system accessibility for elderly users navigating complex pension regulations.</p>
@@ -396,34 +359,19 @@
     <h2>Beyond Research</h2>
     
     <p style="color: #555; font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;">
-        When I'm not immersed in research or buried in assignments, I love trekking through mountains, 
-        exploring different cuisines and cultures, and creating various forms of art—from intricate string art 
-        to colorful resin pieces and traditional painting. These experiences keep me grounded and inspire 
-        my approach to human-centered design.
+        When not engaged in research or coursework, I enjoy trekking through mountains and creating 
+        various forms of art including string art, resin pieces, and traditional painting. These experiences 
+        inform my perspective on human-centered design.
     </p>
     
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; border-radius: 8px; overflow: hidden;">
-        <img src="E3414DD2-320A-4A9E-BD0E-9721716D18AB_Original.jpg" alt="Mountain Trekking" style="width: 100%; height: 100px; object-fit: cover;">
-        <img src="FullSizeRender.jpeg" alt="String Art" style="width: 100%; height: 100px; object-fit: cover;">
-        <img src="IMG_0509.jpeg" alt="Resin Art" style="width: 100%; height: 100px; object-fit: cover;">
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 10px; border-radius: 6px; overflow: hidden;">
+        <img src="E3414DD2-320A-4A9E-BD0E-9721716D18AB_Original.jpg" alt="Mountain Trekking" style="width: 100%; height: 110px; object-fit: contain; background: #f8f8f8; border-radius: 4px;">
+        <img src="FullSizeRender.jpeg" alt="String Art" style="width: 100%; height: 110px; object-fit: contain; background: #f8f8f8; border-radius: 4px;">
+        <img src="IMG_0509.jpeg" alt="Resin Art" style="width: 100%; height: 110px; object-fit: contain; background: #f8f8f8; border-radius: 4px;">
     </div>
 </section>
 
 <footer class="contact">
     <h3>Contact</h3>
     <p style="color: #555; margin-bottom: 8px; font-size: 0.85rem;">
-        pandya.mu@northeastern.edu<br>
-        Toronto, Ontario, Canada
-    </p>
-    
-    <div class="contact-links">
-        <a href="https://www.researchgate.net/profile/Mudra-Pandya">ResearchGate</a>
-        <a href="https://medium.com/@mudrawork27">Medium</a>
-        <a href="#">Google Scholar</a>
-        <a href="https://linkedin.com/in/mudrapandya">LinkedIn</a>
-        <a href="https://github.com/mudrap2706">GitHub</a>
-    </div>
-    
-    <p style="color: #999; font-size: 0.7rem; margin-top: 12px;">© 2025 Mudra Pandya</p>
-</footer>
-</body> </html>
+        pandya.mu
