@@ -74,11 +74,6 @@
         margin-bottom: 8px;
     }
     
-    .education h2 { }
-    .experience h2 { }
-    .projects h2 { }
-    .interests h2 { }
-    
     .education-item, .experience-item {
         margin-bottom: 8px;
         padding-bottom: 6px;
@@ -131,11 +126,21 @@
     }
     
     .project-links a {
-        color: #2c5aa0;
+        display: inline-block;
+        padding: 8px 16px;
+        background: #2c5aa0;
+        color: white;
         text-decoration: none;
-        margin-right: 10px;
+        border-radius: 6px;
         font-size: 0.75rem;
         font-weight: 500;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        transition: background 0.3s ease;
+    }
+    
+    .project-links a:hover {
+        background: #1e3a8a;
     }
     
     .project-image {
@@ -269,7 +274,7 @@
     <div class="experience-item">
         <h3>UX Designer - Government Digital Services</h3>
         <p class="details">Gujarat Infotech • Internship</p>
-        <p class="description">National Pension System accessibility design focusing on elderly user experience and regulatory compliance navigation.</p>
+        <p>National Pension System accessibility design focusing on elderly user experience and regulatory compliance navigation.</p>
     </div>
     
     <div class="experience-item">
@@ -335,8 +340,8 @@
     <div class="project">
         <h3>National Pension System: Accessible Design for Elderly Users</h3>
         <div class="project-links">
-            <a href="User%20Manual%20for%20online%20registration%20under%20NPS%20through%20GIL_English.pdf">User Manual Documentation</a>
-            <a href="#">UX Process Design</a>
+            <a href="User%20Manual%20for%20online%20registration%20under%20NPS%20through%20GIL_English.pdf">User Manual</a>
+            <a href="https://www.prismetric.com/case-studies/">UX Case Studies</a>
         </div>
         
         <img src="nps_interface.png" alt="NPS User Interface" class="project-image">
@@ -353,6 +358,29 @@
             </ul>
         </div>
     </div>
+
+<div class="project">
+            <h3>BCMS: Human-Centered Airport Operations Database</h3>
+            <div class="project-links">
+                <a href="https://www.researchgate.net/publication/394541487_Human-Centered_Database_Design_for_Airport_Operations_A_Systems_Analysis_of_Baggage_and_Catering_Management">Read Full Paper</a>
+                <a href="Airport_Operations_Database_Design_Human_Centered_Systems_Analysis.pdf">Technical Documentation</a>
+            </div>
+            
+            <img src="bcms_database.png" alt="BCMS Database Design" class="project-image">
+            
+            <p class="project-description"><strong>Challenge:</strong> Airport operations with fragmented systems causing inefficiencies in baggage handling and catering services.</p>
+            <p class="project-description"><strong>Solution:</strong> Integrated relational database with 15+ entities, real-time tracking, and user-centered design for diverse stakeholders.</p>
+            
+            <div class="project-results">
+                <h4>Impact & Results:</h4>
+                <ul>
+                    <li>Designed comprehensive <strong>database architecture</strong> for complex operations</li>
+                    <li>Real-time tracking system improving passenger experience</li>
+                    <li>Scalable design for high-traffic airport environments</li>
+                    <li>Human-centered approach to technical system design</li>
+                </ul>
+            </div>
+        </div>
 </section>
 
 <section id="interests" class="section interests">
@@ -388,5 +416,4 @@
     
     <p style="color: #999; font-size: 0.7rem; margin-top: 12px;">© 2025 Mudra Pandya</p>
 </footer>
-</body>
-</html>
+</body> </html>
