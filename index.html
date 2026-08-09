@@ -1,442 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudra Pandya</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .header {
-            display: flex;
-            align-items: flex-start;
-            gap: 25px;
-            margin-bottom: 20px;
-        }
-        
-        .profile-img {
-            width: 180px;
-            height: 240px;
-            border-radius: 8px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        
-        .header-content h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            color: #2c5aa0;
-            margin-bottom: 5px;
-        }
-        
-        .nav-links {
-            margin: 5px 0 8px 0;
-        }
-        
-        .nav-links a {
-            color: #2c5aa0;
-            text-decoration: none;
-            margin-right: 12px;
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-        
-        .quote {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 8px;
-            line-height: 1.5;
-            font-size: 0.9rem;
-            border-left: 3px solid #2c5aa0;
-            padding-left: 12px;
-        }
-        
-        .bio {
-            color: #333;
-            line-height: 1.6;
-            font-size: 0.85rem;
-        }
-        
-        .bio p {
-            margin-bottom: 8px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mudra Pandya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --paper: #FAF9F5;
+        --ink: #1E2330;
+        --ink-soft: #565D6B;
+        --ink-faint: #8B909C;
+        --rule: #DDD8CA;
+        --accent: #2F4C66;
+        --serif: 'Newsreader', Georgia, serif;
+        --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+        --mono: 'IBM Plex Mono', 'Courier New', monospace;
+    }
 
-        .research-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin: 8px 0 4px 0;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .research-tags span {
-            background: #eef3fb;
-            color: #2c5aa0;
-            font-size: 0.72rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 999px;
-        }
-        
-        .section {
-            margin-bottom: 18px;
-        }
-        
-        .section h2 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-        }
-        
-        .education-item, .experience-item {
-            margin-bottom: 8px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid #f5f5f5;
-        }
-        
-        .education-item:last-child, .experience-item:last-child {
-            border-bottom: none;
-        }
-        
-        .education-item h3, .experience-item h3 {
-            color: #333;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-        
-        .education-item .details, .experience-item .details {
-            color: #2c5aa0;
-            font-size: 0.75rem;
-            margin-bottom: 2px;
-            font-weight: 500;
-        }
-        
-        .education-item p, .experience-item p {
-            color: #555;
-            font-size: 0.75rem;
-            line-height: 1.3;
-        }
-        
-        .project {
-            margin-bottom: 15px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .project:last-child {
-            border-bottom: none;
-        }
-        
-        .project h3 {
-            color: #2c5aa0;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
+    body {
+        font-family: var(--sans);
+        background: var(--paper);
+        color: var(--ink);
+        line-height: 1.65;
+        font-size: 15px;
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 64px 24px 80px;
+    }
 
-        .project-tag {
-            display: inline-block;
-            background: #f0f0f0;
-            color: #555;
-            font-size: 0.68rem;
-            font-weight: 600;
-            padding: 2px 8px;
-            border-radius: 999px;
-            margin-bottom: 6px;
-        }
-        
-        .project-links {
-            margin: 4px 0 6px 0;
-        }
-        
-        .project-links a {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #2c5aa0;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            margin-right: 10px;
-            margin-bottom: 5px;
-            transition: background 0.3s ease;
-        }
-        
-        .project-links a:hover {
-            background: #1e3a8a;
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 200px;
-            border-radius: 4px;
-            margin: 6px 0;
-            object-fit: contain;
-            background: #f8f8f8;
-            border: 1px solid #e0e0e0;
-            display: block;
-        }
-        
-        .project-description {
-            color: #555;
-            line-height: 1.4;
-            margin-bottom: 4px;
-            font-size: 0.8rem;
-        }
-        
-        .project-results {
-            background: #f8f9fa;
-            padding: 8px;
-            border-radius: 4px;
-            border-left: 3px solid #2c5aa0;
-            margin-top: 6px;
-        }
-        
-        .project-results h4 {
-            color: #333;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        
-        .project-results ul {
-            margin-left: 10px;
-        }
-        
-        .project-results li {
-            color: #555;
-            margin-bottom: 1px;
-            font-size: 0.75rem;
-        }
-        
-        .contact {
-            text-align: center;
-            margin-top: 20px;
-            padding-top: 12px;
-            border-top: 1px solid #eee;
-        }
-        
-        .contact h3 {
-            color: #333;
-            font-size: 1.1rem;
-            margin-bottom: 6px;
-        }
-        
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 8px 0;
-            flex-wrap: wrap;
-        }
-        
-        .contact-links a {
-            color: #2c5aa0;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.8rem;
-        }
-        
-        @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-        }
-    </style>
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+    a:hover { border-bottom-color: var(--accent); }
+
+    /* ---------- Header ---------- */
+    .header {
+        display: flex;
+        gap: 28px;
+        align-items: flex-start;
+        margin-bottom: 8px;
+    }
+
+    .profile-img {
+        width: 108px;
+        height: 108px;
+        object-fit: cover;
+        border: 1px solid var(--rule);
+        flex-shrink: 0;
+        filter: grayscale(60%);
+        transition: filter 0.4s ease;
+    }
+    .profile-img:hover { filter: grayscale(0%); }
+
+    .header-content h1 {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 2.1rem;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+        margin-bottom: 4px;
+    }
+
+    .affil {
+        font-family: var(--serif);
+        font-style: italic;
+        color: var(--ink-soft);
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .nav-links {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        color: var(--ink-soft);
+    }
+    .nav-links a { color: var(--ink-soft); margin-right: 4px; }
+    .nav-links span.sep { margin: 0 8px; color: var(--rule); }
+
+    hr.top-rule {
+        border: none;
+        border-top: 1px solid var(--ink);
+        margin: 22px 0 26px;
+    }
+
+    /* ---------- Bio ---------- */
+    .bio p { margin-bottom: 12px; font-size: 0.94rem; color: var(--ink); }
+
+    .research-line {
+        font-family: var(--serif);
+        font-style: italic;
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+        margin: 4px 0 16px;
+        line-height: 1.6;
+    }
+    .research-line b { font-style: normal; color: var(--ink); font-weight: 500; }
+
+    /* ---------- Section scaffolding ---------- */
+    .section { margin-top: 44px; }
+
+    .section-label {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--rule);
+        margin-bottom: 20px;
+    }
+
+    .section-intro {
+        font-size: 0.9rem;
+        color: var(--ink-soft);
+        margin-bottom: 18px;
+        line-height: 1.7;
+    }
+
+    /* ---------- Experience / Education ---------- */
+    .entry {
+        display: grid;
+        grid-template-columns: 108px 1fr;
+        gap: 18px;
+        margin-bottom: 20px;
+    }
+
+    .entry-date {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--ink-faint);
+        padding-top: 2px;
+    }
+
+    .entry-title {
+        font-weight: 600;
+        font-size: 0.93rem;
+        color: var(--ink);
+    }
+
+    .entry-org {
+        font-style: italic;
+        color: var(--ink-soft);
+        font-size: 0.85rem;
+        margin-bottom: 4px;
+    }
+
+    .entry-desc {
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        line-height: 1.6;
+    }
+
+    /* ---------- Projects ---------- */
+    .project { margin-bottom: 40px; }
+
+    .project-meta {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 4px;
+    }
+
+    .project h3 {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: 1.15rem;
+        color: var(--ink);
+        margin-bottom: 6px;
+    }
+
+    .project-links {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+    }
+    .project-links a { margin-right: 14px; }
+
+    .project-description {
+        font-size: 0.88rem;
+        color: var(--ink);
+        margin-bottom: 8px;
+        line-height: 1.65;
+    }
+
+    .project-results {
+        margin-top: 10px;
+        padding-left: 16px;
+        border-left: 2px solid var(--rule);
+    }
+    .project-results p {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-faint);
+        margin-bottom: 6px;
+    }
+    .project-results ul { margin-left: 16px; }
+    .project-results li {
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+        margin-bottom: 3px;
+    }
+
+    .fig {
+        margin-top: 16px;
+    }
+    .fig img {
+        width: 100%;
+        border: 1px solid var(--rule);
+        display: block;
+    }
+    .fig-cap {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 0.78rem;
+        color: var(--ink-faint);
+        margin-top: 6px;
+    }
+    .fig-cap b { font-style: normal; }
+
+    .fig-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 16px;
+    }
+    @media (max-width: 560px) {
+        .fig-grid { grid-template-columns: 1fr; }
+        .entry { grid-template-columns: 1fr; gap: 4px; }
+    }
+
+    /* ---------- Interests ---------- */
+    .interests-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        margin-top: 14px;
+    }
+    .interests-grid img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        border: 1px solid var(--rule);
+        filter: grayscale(70%);
+        transition: filter 0.4s ease;
+    }
+    .interests-grid img:hover { filter: grayscale(0%); }
+
+    /* ---------- Footer ---------- */
+    .contact {
+        margin-top: 56px;
+        padding-top: 20px;
+        border-top: 1px solid var(--ink);
+        font-size: 0.85rem;
+        color: var(--ink-soft);
+    }
+    .contact-links {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        margin-top: 8px;
+    }
+    .contact-links a { margin-right: 16px; }
+    .copyright {
+        font-family: var(--mono);
+        font-size: 0.68rem;
+        color: var(--ink-faint);
+        margin-top: 20px;
+    }
+
+    @media (max-width: 560px) {
+        .header { flex-direction: column; align-items: flex-start; }
+    }
+</style>
 </head>
 <body>
+
     <header class="header">
         <img src="profile.jpg" alt="Mudra Pandya" class="profile-img">
         <div class="header-content">
             <h1>Mudra Pandya</h1>
-            <div class="nav-links">
-                <a href="#research">Research</a>
-                <a href="#education">Education</a>
-                <a href="#experience">Experience</a>
-                <a href="./Mudra Pandya PhD CV.pdf" target="_blank">CV</a>
-                <a href="https://www.linkedin.com/in/mudra-pandya-0739641a0/" target="_blank">LinkedIn</a>
-            </div>
-            <p class="quote">"The best way to predict the future is to create it." — Peter Drucker</p>
-            <div class="bio">
-                <p>M.S. Information Systems candidate at Northeastern University – Toronto (GPA 4.0/4.0), pursuing doctoral research at the intersection of machine learning, responsible AI, and human-centered design. Current research assistant work with Prof. Zheng Zheng applies statistical modeling and predictive analytics to healthcare and accessibility problems.</p>
-
-                <div class="research-tags">
-                    <span>Machine Learning &amp; Deep Learning</span>
-                    <span>Responsible AI &amp; Ethics</span>
-                    <span>Human-Computer Interaction</span>
-                    <span>Data Management &amp; Engineering</span>
-                </div>
-
-                <p>Background spans full-stack development, government UX design, and applied data engineering, giving my research a practical grounding: I've built systems end-to-end, from raw data pipelines to the interfaces people actually use. Particularly motivated by assistive and accessible technology for aging populations.</p>
-            </div>
+            <p class="affil">M.S. Information Systems, Northeastern University — Toronto</p>
+            <nav class="nav-links">
+                <a href="#research">Research</a><span class="sep">·</span><a href="#experience">Experience</a><span class="sep">·</span><a href="#education">Education</a><span class="sep">·</span><a href="#projects">Projects</a><span class="sep">·</span><a href="./Mudra Pandya PhD CV.pdf" target="_blank">CV</a><span class="sep">·</span><a href="https://www.linkedin.com/in/mudra-pandya-0739641a0/" target="_blank">LinkedIn</a>
+            </nav>
         </div>
     </header>
 
+    <hr class="top-rule">
+
+    <div class="bio">
+        <p>I am a Master's student in Information Systems at Northeastern University's Toronto campus, preparing to pursue doctoral research at the intersection of machine learning, responsible AI, and human-centered design. My current work as a research assistant with Prof. Zheng Zheng applies statistical modeling and predictive analytics to problems in healthcare and accessibility.</p>
+
+        <p class="research-line"><b>Research interests</b> — Machine Learning &amp; Deep Learning; Responsible AI &amp; Ethics; Human-Computer Interaction; Data Management &amp; Engineering.</p>
+
+        <p>My background spans full-stack development, government UX design, and applied data engineering — a practical grounding that lets me move across a research problem end to end, from raw data to the interface a person actually uses. I am especially motivated by assistive and accessible technology for aging populations.</p>
+    </div>
+
     <section id="research" class="section">
-        <h2>Research Focus</h2>
-        <p style="color:#555; font-size:0.85rem; line-height:1.5;">
-            My work sits across four connected threads: building and evaluating machine learning models 
-            (ensemble methods, deep learning), examining fairness and interpretability in AI systems, 
-            designing human-centered interfaces for underserved users, and engineering the data infrastructure 
-            that makes reliable, reproducible analysis possible. I'm especially interested in how these threads 
-            come together in assistive technology for aging and vulnerable populations.
+        <div class="section-label">Research Focus</div>
+        <p class="section-intro">
+            My work sits across four connected threads: building and evaluating machine learning models, examining fairness and interpretability in AI systems, designing human-centered interfaces for underserved users, and engineering the data infrastructure that makes reliable, reproducible analysis possible. I'm especially interested in where these threads converge — in assistive technology for aging and vulnerable populations.
         </p>
     </section>
 
-    <section id="experience" class="section experience">
-        <h2>Professional Experience</h2>
+    <section id="experience" class="section">
+        <div class="section-label">Experience</div>
 
-        <div class="experience-item">
-            <h3>Research Assistant</h3>
-            <p class="details">Northeastern University - Toronto • with Prof. Zheng Zheng</p>
-            <p>Conduct research in machine learning applications for healthcare and accessibility technology, applying statistical modeling and predictive analytics to complex datasets. Collaborate with industry partners on automated analysis systems and research reporting, translating findings into practical, real-world solutions.</p>
-        </div>
-        
-        <div class="experience-item">
-            <h3>IT Data Co-op</h3>
-            <p class="details">Castrol - Wakefield Canada Inc • Jan 2026 – Present</p>
-            <p>Support data systems and analytics work within the IT function, applying data science coursework to enterprise operations.</p>
+        <div class="entry">
+            <div class="entry-date">2024 –<br>Present</div>
+            <div>
+                <div class="entry-title">Research Assistant</div>
+                <div class="entry-org">Northeastern University — Toronto, with Prof. Zheng Zheng</div>
+                <div class="entry-desc">Machine learning applications for healthcare and accessibility technology, applying statistical modeling and predictive analytics to complex datasets. Collaborate with industry partners on automated analysis systems and research reporting.</div>
+            </div>
         </div>
 
-        <div class="experience-item">
-            <h3>Consultant</h3>
-            <p class="details">RCIScience (Royal Canadian Institute for Science) • Oct 2024 – Jan 2026</p>
-            <p>Provided research and analytical consulting support to a science-focused nonprofit organization on a remote, part-time basis.</p>
+        <div class="entry">
+            <div class="entry-date">Jan 2026 –<br>Present</div>
+            <div>
+                <div class="entry-title">IT Data Co-op</div>
+                <div class="entry-org">Castrol – Wakefield Canada Inc.</div>
+                <div class="entry-desc">Support data systems and analytics work within the IT function, applying data science coursework to enterprise operations.</div>
+            </div>
         </div>
 
-        <div class="experience-item">
-            <h3>System Analyst</h3>
-            <p class="details">Bayvape • Oct 2023 – Present</p>
-            <p>Analyze and maintain business systems, supporting operational reporting and process workflows on a part-time contract basis.</p>
+        <div class="entry">
+            <div class="entry-date">Oct 2024 –<br>Jan 2026</div>
+            <div>
+                <div class="entry-title">Consultant</div>
+                <div class="entry-org">RCIScience (Royal Canadian Institute for Science)</div>
+                <div class="entry-desc">Research and analytical consulting support to a science-focused nonprofit organization, remote and part-time.</div>
+            </div>
         </div>
 
-        <div class="experience-item">
-            <h3>Business Analyst</h3>
-            <p class="details">Prismetric Technologies Pvt Ltd • Mar 2021 – Sep 2023</p>
-            <p>Conducted technology market and competitive research, translating findings on AI adoption and digital transformation into actionable insight for enterprise stakeholders.</p>
+        <div class="entry">
+            <div class="entry-date">Oct 2023 –<br>Present</div>
+            <div>
+                <div class="entry-title">System Analyst</div>
+                <div class="entry-org">Bayvape</div>
+                <div class="entry-desc">Analyze and maintain business systems, supporting operational reporting and process workflows on a part-time contract basis.</div>
+            </div>
         </div>
 
-        <div class="experience-item">
-            <h3>Marketing Analyst</h3>
-            <p class="details">Gujarat Infotech Limited • Nov 2020 – Feb 2021</p>
-            <p>Supported user research and demographic analysis for a national pension system, applying statistical methods to improve service delivery and engagement for elderly users.</p>
+        <div class="entry">
+            <div class="entry-date">2021 –<br>2023</div>
+            <div>
+                <div class="entry-title">Business Analyst</div>
+                <div class="entry-org">Prismetric Technologies Pvt Ltd</div>
+                <div class="entry-desc">Technology market and competitive research on AI adoption and digital transformation, translated into insight for enterprise stakeholders.</div>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">2020 –<br>2021</div>
+            <div>
+                <div class="entry-title">Marketing Analyst</div>
+                <div class="entry-org">Gujarat Infotech Limited</div>
+                <div class="entry-desc">User research and demographic analysis for a national pension system, applying statistical methods to improve service delivery for elderly users.</div>
+            </div>
         </div>
     </section>
 
-    <section id="education" class="section education">
-        <h2>Education</h2>
-        
-        <div class="education-item">
-            <h3>M.S. in Information Systems</h3>
-            <p class="details">Northeastern University - Toronto • GPA: 3.8 • Expected 2026</p>
-            <p>Data Science Engineering Methods, Advanced Machine Learning Applications, Database Architecture</p>
+    <section id="education" class="section">
+        <div class="section-label">Education</div>
+
+        <div class="entry">
+            <div class="entry-date">2024 –<br>2027</div>
+            <div>
+                <div class="entry-title">M.S. Information Systems</div>
+                <div class="entry-org">Northeastern University — Toronto · GPA 3.8/4.0</div>
+                <div class="entry-desc">Data Science Engineering Methods, Advanced Machine Learning Applications, Database Architecture.</div>
+            </div>
         </div>
-        
-        <div class="education-item">
-            <h3>Postgraduate Diploma in Mobile Application Development</h3>
-            <p class="details">Centennial College • GPA: 3.9</p>
-            <p>Full-stack development, mobile UX design, software engineering principles</p>
+
+        <div class="entry">
+            <div class="entry-date">2023 –<br>2024</div>
+            <div>
+                <div class="entry-title">Postgraduate Diploma, Mobile Application Development</div>
+                <div class="entry-org">Centennial College · GPA 3.85/4.5</div>
+                <div class="entry-desc">Full-stack development, mobile UX design, software engineering principles.</div>
+            </div>
         </div>
-        
-        <div class="education-item">
-            <h3>Bachelor of Computer Applications</h3>
-            <p class="details">Gujarat University • First Class with Distinction • GPA: 4.0</p>
-            <p>Computer science fundamentals, programming, database systems</p>
+
+        <div class="entry">
+            <div class="entry-date">2017 –<br>2020</div>
+            <div>
+                <div class="entry-title">Bachelor of Computer Applications</div>
+                <div class="entry-org">Gujarat University · First Class with Distinction · CGPA 7.92/10</div>
+                <div class="entry-desc">Computer science fundamentals, programming, database systems.</div>
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="section projects">
-        <h2>Featured Research &amp; Projects</h2>
-        
+    <section id="projects" class="section">
+        <div class="section-label">Research &amp; Projects</div>
+
         <div class="project">
-            <span class="project-tag">Machine Learning</span>
+            <div class="project-meta">Machine Learning</div>
             <h3>Healthcare AI: Ensemble Learning for Clinical Prediction</h3>
             <div class="project-links">
-                <a href="https://www.researchgate.net/publication/394347599_Machine_Learning_Report">Read Technical Report</a>
-                <a href="https://medium.com/@mudrawork27">Medium Article</a>
+                <a href="https://www.researchgate.net/publication/394347599_Machine_Learning_Report">Technical Report</a><a href="https://medium.com/@mudrawork27">Medium</a>
             </div>
-            
-            <img src="ml_research.png" alt="ML Research Results" class="project-image">
-            
-            <p class="project-description"><strong>Challenge:</strong> Ensemble machine learning models for healthcare prediction, addressing data imbalance and clinical interpretability.</p>
-            <p class="project-description"><strong>Solution:</strong> XGBoost, Random Forest, and Neural Networks with SMOTE balancing and statistical validation.</p>
-            
+            <p class="project-description"><b>Challenge —</b> Ensemble machine learning models for healthcare prediction, addressing data imbalance and clinical interpretability.</p>
+            <p class="project-description"><b>Approach —</b> XGBoost, Random Forest, and Neural Networks with SMOTE balancing and statistical validation.</p>
             <div class="project-results">
-                <h4>Impact &amp; Results:</h4>
+                <p>Outcomes</p>
                 <ul>
                     <li>Built and validated ensemble models under severe class imbalance in medical datasets</li>
                     <li>Benchmarked multiple architectures against clinical interpretability constraints</li>
-                    <li>Developed model evaluation framework suited to real clinical decision contexts</li>
+                    <li>Developed an evaluation framework suited to real clinical decision contexts</li>
                 </ul>
             </div>
         </div>
 
         <div class="project">
-            <span class="project-tag">Data Management &amp; Engineering</span>
+            <div class="project-meta">Data Management &amp; Engineering</div>
             <h3>Toronto Bicycle Thefts: End-to-End Data Pipeline &amp; BI Dashboard</h3>
             <div class="project-links">
-                <a href="https://github.com/CHAITANYAGANDI/toronto-bicycle-thefts-data-pipeline">Open in GitHub</a>
-                <a href="Toronto_Bicycle_Thefts_Final_Report.pdf" target="_blank">Read Final Report</a>
+                <a href="https://github.com/CHAITANYAGANDI/toronto-bicycle-thefts-data-pipeline">GitHub</a><a href="Toronto_Bicycle_Thefts_Final_Report.pdf" target="_blank">Final Report</a>
+            </div>
+            <p class="project-description"><b>Challenge —</b> Ten years of open municipal crime data (39,000+ records) needed to move from raw CSV to a live, explorable analytics layer usable by non-technical stakeholders.</p>
+            <p class="project-description"><b>My role —</b> Led data modeling and SQL analysis on a 3-person team: designed the MySQL schema, wrote 15 analytical queries spanning temporal, geographic, attribute, and multi-dimensional analysis, and architected 6 pre-aggregated views plus a master table optimized for the BI layer. Teammates handled cloud infrastructure/ETL and the QuickSight dashboard build.</p>
+
+            <div class="fig">
+                <img src="dashboard_full_overview.png" alt="Dashboard overview">
+                <div class="fig-cap"><b>Fig. 1.</b> Full dashboard: KPI cockpit, geographic map, trend line, weekly risk matrix, and brand targeting, unified through a single master table for cross-filtering.</div>
             </div>
 
-            <img src="dashboard_full_overview.png" alt="Toronto Bicycle Thefts Dashboard Overview" class="project-image">
-
-            <p class="project-description"><strong>Challenge:</strong> Ten years of open municipal crime data (39,000+ records) needed to move from raw CSV to a live, explorable analytics layer usable by non-technical stakeholders.</p>
-            <p class="project-description"><strong>My role:</strong> Led data modeling and SQL analysis on a 3-person team — designed the MySQL schema, wrote 15 analytical queries spanning temporal, geographic, attribute, and multi-dimensional analysis, and architected 6 pre-aggregated views plus a master table optimized for the BI layer. Teammates handled cloud infrastructure/ETL (Kafka on EC2, S3) and the QuickSight dashboard build.</p>
-
             <div class="project-results">
-                <h4>Impact &amp; Results:</h4>
+                <p>Outcomes</p>
                 <ul>
                     <li>Schema and query design supporting sub-second dashboard performance across 39,000+ records</li>
-                    <li>Surfaced patterns driving the team's recommendations: recovery rates under 2% in every police division, 53.85% of thefts concentrated at outdoor/street and apartment locations, and a sustained decline since a 2018 peak</li>
-                    <li>Master table architecture enabled QuickSight's global filtering without precomputing every possible aggregation</li>
+                    <li>Recovery rates under 2% in every police division; 53.85% of thefts concentrated at outdoor/street and apartment locations</li>
+                    <li>Master table architecture enabled global filtering without precomputing every possible aggregation</li>
                 </ul>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-top: 10px;">
-                <img src="temporal_trend_analysis.png" alt="Bicycle theft trends over time" style="width: 100%; border-radius: 4px; border: 1px solid #e0e0e0;">
-                <img src="geospatial_risk_map.png" alt="Geographic distribution of thefts" style="width: 100%; border-radius: 4px; border: 1px solid #e0e0e0;">
-                <img src="behavioral_risk_heatmap.png" alt="Weekly risk pattern heatmap" style="width: 100%; border-radius: 4px; border: 1px solid #e0e0e0;">
-                <img src="top_targeted_brands.png" alt="Top 10 targeted bike brands" style="width: 100%; border-radius: 4px; border: 1px solid #e0e0e0;">
+            <div class="fig-grid">
+                <div class="fig">
+                    <img src="temporal_trend_analysis.png" alt="Theft trend over time">
+                    <div class="fig-cap"><b>Fig. 2.</b> Ten-year trend: peak in 2018, sustained decline since.</div>
+                </div>
+                <div class="fig">
+                    <img src="geospatial_risk_map.png" alt="Geographic distribution of thefts">
+                    <div class="fig-cap"><b>Fig. 3.</b> Spatial concentration across Toronto neighborhoods.</div>
+                </div>
+                <div class="fig">
+                    <img src="behavioral_risk_heatmap.png" alt="Weekly risk heatmap">
+                    <div class="fig-cap"><b>Fig. 4.</b> Day × time-of-day risk matrix.</div>
+                </div>
+                <div class="fig">
+                    <img src="top_targeted_brands.png" alt="Top targeted brands">
+                    <div class="fig-cap"><b>Fig. 5.</b> Most frequently targeted bike brands.</div>
+                </div>
             </div>
-            <p style="color:#888; font-size:0.7rem; margin-top:6px;">Pipeline architecture: <img src="Toronto_Bicycle_Thefts_Data_Architecture.jpg" alt="Pipeline architecture diagram" style="width: 100%; border-radius: 4px; border: 1px solid #e0e0e0; margin-top: 4px;"></p>
+
+            <div class="fig">
+                <img src="Toronto_Bicycle_Thefts_Data_Architecture.jpg" alt="Pipeline architecture">
+                <div class="fig-cap"><b>Fig. 6.</b> Pipeline architecture — Kafka/EC2 ingestion, S3 data lake, RDS MySQL analytics layer, QuickSight visualization.</div>
+            </div>
         </div>
 
         <div class="project">
-            <span class="project-tag">Data Management &amp; HCI</span>
+            <div class="project-meta">Data Management &amp; HCI</div>
             <h3>BCMS: Human-Centered Airport Operations Database</h3>
             <div class="project-links">
-                <a href="https://www.researchgate.net/publication/394541487_Human-Centered_Database_Design_for_Airport_Operations_A_Systems_Analysis_of_Baggage_and_Catering_Management">Read Technical Report</a>
-                <a href="Airport_Operations_Database_Design_Human_Centered_Systems_Analysis.pdf">Technical Documentation</a>
+                <a href="https://www.researchgate.net/publication/394541487_Human-Centered_Database_Design_for_Airport_Operations_A_Systems_Analysis_of_Baggage_and_Catering_Management">Technical Report</a><a href="Airport_Operations_Database_Design_Human_Centered_Systems_Analysis.pdf">Documentation</a>
             </div>
-            
-            <img src="airport.jpg" alt="BCMS Database Design" class="project-image">
-            
-            <p class="project-description"><strong>Challenge:</strong> Airport operations with fragmented systems causing inefficiencies in baggage handling and catering services.</p>
-            <p class="project-description"><strong>Solution:</strong> Integrated relational database with 15+ entities, real-time tracking, and user-centered design for diverse stakeholders.</p>
-            
+            <p class="project-description"><b>Challenge —</b> Airport operations with fragmented systems causing inefficiencies in baggage handling and catering services.</p>
+            <p class="project-description"><b>Approach —</b> Integrated relational database with 15+ entities, real-time tracking, and user-centered design for diverse stakeholders.</p>
+            <div class="fig">
+                <img src="airport.jpg" alt="BCMS database design">
+                <div class="fig-cap"><b>Fig. 7.</b> Entity relationship structure for baggage and catering management.</div>
+            </div>
             <div class="project-results">
-                <h4>Impact &amp; Results:</h4>
+                <p>Outcomes</p>
                 <ul>
-                    <li>Designed comprehensive database architecture for complex, multi-stakeholder operations</li>
+                    <li>Comprehensive database architecture for complex, multi-stakeholder operations</li>
                     <li>Real-time tracking system improving passenger experience</li>
                     <li>Human-centered approach to technical system design at scale</li>
                 </ul>
@@ -444,43 +491,41 @@
         </div>
 
         <div class="project">
-            <span class="project-tag">Human-Computer Interaction</span>
-            <h3>WeCare: Elderly Care Mobile Application with Human-Centered Design</h3>
+            <div class="project-meta">Human-Computer Interaction</div>
+            <h3>WeCare: Elderly Care Mobile Application</h3>
             <div class="project-links">
-                <a href="https://github.com/SpideyP00L/Flutter_Final_Project_WeCare">Open in GitHub</a>
-                <a href="FinalUI:UX.pdf">Design Process</a>
+                <a href="https://github.com/SpideyP00L/Flutter_Final_Project_WeCare">GitHub</a><a href="FinalUI:UX.pdf">Design Process</a>
             </div>
-            
-            <img src="wecare.png" alt="WeCare Mobile Application" class="project-image">
-            
-            <p class="project-description"><strong>Challenge:</strong> Designing mobile interfaces for elderly care that address complex caregiver workflows in skilled nursing facilities while prioritizing accessibility.</p>
-            <p class="project-description"><strong>Solution:</strong> Flutter-based mobile application built with empathy mapping, persona development, and iterative usability testing for caregiver task management.</p>
-            
+            <p class="project-description"><b>Challenge —</b> Designing mobile interfaces for elderly care that address complex caregiver workflows in skilled nursing facilities while prioritizing accessibility.</p>
+            <p class="project-description"><b>Approach —</b> Flutter-based application built with empathy mapping, persona development, and iterative usability testing for caregiver task management.</p>
+            <div class="fig">
+                <img src="wecare.png" alt="WeCare mobile application">
+                <div class="fig-cap"><b>Fig. 8.</b> Caregiver task-prioritization interface.</div>
+            </div>
             <div class="project-results">
-                <h4>Impact &amp; Results:</h4>
+                <p>Outcomes</p>
                 <ul>
-                    <li>Developed accessibility-focused interfaces for elderly care contexts</li>
-                    <li>Applied human-centered design methodology from research through implementation</li>
-                    <li>Built task-prioritization systems addressing real caregiver workflow challenges</li>
+                    <li>Accessibility-focused interfaces for elderly care contexts</li>
+                    <li>Human-centered design methodology applied from research through implementation</li>
+                    <li>Task-prioritization system addressing real caregiver workflow challenges</li>
                 </ul>
             </div>
         </div>
 
         <div class="project">
-            <span class="project-tag">Human-Computer Interaction</span>
+            <div class="project-meta">Human-Computer Interaction</div>
             <h3>National Pension System: Accessible Design for Elderly Users</h3>
             <div class="project-links">
-                <a href="User%20Manual%20for%20online%20registration%20under%20NPS%20through%20GIL_English.pdf">User Manual</a>
-                <a href="https://www.prismetric.com/case-studies/">UX Case Studies</a>
+                <a href="User%20Manual%20for%20online%20registration%20under%20NPS%20through%20GIL_English.pdf">User Manual</a><a href="https://www.prismetric.com/case-studies/">Case Studies</a>
             </div>
-            
-            <img src="nps_interface.png" alt="NPS User Interface" class="project-image">
-            
-            <p class="project-description"><strong>Challenge:</strong> Government system accessibility for elderly users navigating complex pension regulations.</p>
-            <p class="project-description"><strong>Solution:</strong> Comprehensive user manuals and accessible interface design for senior citizens.</p>
-            
+            <p class="project-description"><b>Challenge —</b> Government system accessibility for elderly users navigating complex pension regulations.</p>
+            <p class="project-description"><b>Approach —</b> Comprehensive user manuals and accessible interface design for senior citizens.</p>
+            <div class="fig">
+                <img src="nps_interface.png" alt="NPS interface">
+                <div class="fig-cap"><b>Fig. 9.</b> Registration interface designed for elderly users.</div>
+            </div>
             <div class="project-results">
-                <h4>Impact &amp; Results:</h4>
+                <p>Outcomes</p>
                 <ul>
                     <li>Simplified pension registration for millions of users</li>
                     <li>Improved elderly accessibility in government services</li>
@@ -490,61 +535,39 @@
         </div>
 
         <div class="project">
-            <span class="project-tag">Full-Stack</span>
+            <div class="project-meta">Full-Stack</div>
             <h3>FlowCart: Empowering Female Entrepreneurs</h3>
             <div class="project-links">
-                <a href="https://github.com/yh0416/Final-Project-5100">Open in GitHub</a>
+                <a href="https://github.com/yh0416/Final-Project-5100">GitHub</a>
             </div>
-            
-            <img src="flowcart_app.png" alt="FlowCart Application" class="project-image">
-            
-            <p class="project-description"><strong>Challenge:</strong> Delivery platform for female-driven small businesses addressing operational challenges.</p>
-            <p class="project-description"><strong>Solution:</strong> JavaFX and MySQL with role-based interfaces and real-time tracking.</p>
-            
-            <div class="project-results">
-                <h4>Impact &amp; Results:</h4>
-                <ul>
-                    <li>Streamlined operations for women entrepreneurs</li>
-                    <li>Role-based access control for different user types</li>
-                    <li>Intuitive interfaces reducing operational complexity</li>
-                </ul>
+            <p class="project-description"><b>Challenge —</b> Delivery platform for female-driven small businesses addressing operational challenges.</p>
+            <p class="project-description"><b>Approach —</b> JavaFX and MySQL with role-based interfaces and real-time tracking.</p>
+            <div class="fig">
+                <img src="flowcart_app.png" alt="FlowCart application">
+                <div class="fig-cap"><b>Fig. 10.</b> Role-based order tracking interface.</div>
             </div>
         </div>
-        
     </section>
 
-    <section id="interests" class="section interests">
-        <h2>Beyond Research</h2>
-        
-        <p style="color: #555; font-size: 0.85rem; margin-bottom: 12px; line-height: 1.5;">
-            When not engaged in research or coursework, I enjoy trekking through mountains and creating 
-            various forms of art including string art, resin pieces, and traditional painting. These experiences 
-            inform my perspective on human-centered design.
+    <section class="section">
+        <div class="section-label">Beyond Research</div>
+        <p class="section-intro">
+            When not engaged in research or coursework, I enjoy trekking through mountains and creating string art, resin pieces, and traditional painting — experiences that inform my perspective on human-centered design.
         </p>
-        
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-top: 10px; border-radius: 6px; overflow: hidden;">
-            <img src="E3414DD2-320A-4A9E-BD0E-9721716D18AB_Original.jpg" alt="Mountain Trekking" style="width: 100%; height: 110px; object-fit: contain; background: #f8f8f8; border-radius: 4px;">
-            <img src="FullSizeRender.jpeg" alt="String Art" style="width: 100%; height: 110px; object-fit: contain; background: #f8f8f8; border-radius: 4px;">
-            <img src="IMG_0509.jpeg" alt="Resin Art" style="width: 100%; height: 110px; object-fit: contain; background: #f8f8f8; border-radius: 4px;">
+        <div class="interests-grid">
+            <img src="E3414DD2-320A-4A9E-BD0E-9721716D18AB_Original.jpg" alt="Mountain trekking">
+            <img src="FullSizeRender.jpeg" alt="String art">
+            <img src="IMG_0509.jpeg" alt="Resin art">
         </div>
     </section>
 
     <footer class="contact">
-        <h3>Contact</h3>
-        <p style="color: #555; margin-bottom: 8px; font-size: 0.85rem;">
-            pandya.mu@northeastern.edu<br>
-            Toronto, Ontario, Canada
-        </p>
-        
+        <div>pandya.mu@northeastern.edu &nbsp;·&nbsp; Toronto, Ontario, Canada</div>
         <div class="contact-links">
-            <a href="https://www.researchgate.net/profile/Mudra-Pandya">ResearchGate</a>
-            <a href="https://medium.com/@mudrawork27">Medium</a>
-            <a href="#">Google Scholar</a>
-            <a href="https://linkedin.com/in/mudrapandya">LinkedIn</a>
-            <a href="https://github.com/mudrap2706">GitHub</a>
+            <a href="https://www.researchgate.net/profile/Mudra-Pandya">ResearchGate</a><a href="https://medium.com/@mudrawork27">Medium</a><a href="#">Google Scholar</a><a href="https://linkedin.com/in/mudrapandya">LinkedIn</a><a href="https://github.com/mudrap2706">GitHub</a>
         </div>
-        
-        <p style="color: #999; font-size: 0.7rem; margin-top: 12px;">© 2025 Mudra Pandya</p>
+        <div class="copyright">© 2025 Mudra Pandya</div>
     </footer>
+
 </body>
 </html>
