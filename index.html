@@ -28,9 +28,9 @@
         color: var(--ink);
         line-height: 1.65;
         font-size: 15px;
-        max-width: 720px;
+        max-width: 900px;
         margin: 0 auto;
-        padding: 64px 24px 80px;
+        padding: 56px 32px 80px;
     }
 
     a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
@@ -213,9 +213,14 @@
         margin-top: 16px;
     }
     .fig img {
-        width: 100%;
+        max-width: 100%;
+        max-height: 340px;
+        width: auto;
+        object-fit: contain;
         border: 1px solid var(--rule);
+        background: #F1EEE4;
         display: block;
+        margin: 0 auto;
     }
     .fig-cap {
         font-family: var(--serif);
@@ -229,9 +234,10 @@
     .fig-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 16px;
+        gap: 20px;
         margin-top: 16px;
     }
+    .fig-grid .fig img { max-height: 220px; width: 100%; }
     @media (max-width: 560px) {
         .fig-grid { grid-template-columns: 1fr; }
         .entry { grid-template-columns: 1fr; gap: 4px; }
@@ -241,14 +247,20 @@
     .interests-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
+        gap: 10px;
         margin-top: 14px;
+    }
+    .interests-grid .thumb {
+        display: block;
+        height: 130px;
+        border: 1px solid var(--rule);
+        background: #F1EEE4;
+        overflow: hidden;
     }
     .interests-grid img {
         width: 100%;
-        height: 100px;
-        object-fit: cover;
-        border: 1px solid var(--rule);
+        height: 100%;
+        object-fit: contain;
         filter: grayscale(70%);
         transition: filter 0.4s ease;
     }
@@ -296,7 +308,7 @@
     <hr class="top-rule">
 
     <div class="bio">
-        <p>I am a Master's student in Information Systems at Northeastern University's Toronto campus, preparing to pursue doctoral research at the intersection of machine learning, responsible AI, and human-centered design.</p>
+        <p>I am a Master's student in Information Systems at Northeastern University's Toronto campus, preparing to pursue doctoral research at the intersection of machine learning, responsible AI, and human-centered design. My current work as a research assistant with Prof. Zheng Zheng applies statistical modeling and predictive analytics to problems in healthcare and accessibility.</p>
 
         <p class="research-line"><b>Research interests</b> — Machine Learning &amp; Deep Learning; Responsible AI &amp; Ethics; Human-Computer Interaction; Data Management &amp; Engineering.</p>
 
@@ -312,6 +324,15 @@
 
     <section id="experience" class="section">
         <div class="section-label">Experience</div>
+
+        <div class="entry">
+            <div class="entry-date">2024 –<br>Present</div>
+            <div>
+                <div class="entry-title">Research Assistant</div>
+                <div class="entry-org">Northeastern University — Toronto, with Prof. Zheng Zheng</div>
+                <div class="entry-desc">Machine learning applications for healthcare and accessibility technology, applying statistical modeling and predictive analytics to complex datasets. Collaborate with industry partners on automated analysis systems and research reporting.</div>
+            </div>
+        </div>
 
         <div class="entry">
             <div class="entry-date">Jan 2026 –<br>Present</div>
@@ -546,9 +567,9 @@
             When not engaged in research or coursework, I enjoy trekking through mountains and creating string art, resin pieces, and traditional painting — experiences that inform my perspective on human-centered design.
         </p>
         <div class="interests-grid">
-            <img src="E3414DD2-320A-4A9E-BD0E-9721716D18AB_Original.jpg" alt="Mountain trekking">
-            <img src="FullSizeRender.jpeg" alt="String art">
-            <img src="IMG_0509.jpeg" alt="Resin art">
+            <div class="thumb"><img src="E3414DD2-320A-4A9E-BD0E-9721716D18AB_Original.jpg" alt="Mountain trekking"></div>
+            <div class="thumb"><img src="FullSizeRender.jpeg" alt="String art"></div>
+            <div class="thumb"><img src="IMG_0509.jpeg" alt="Resin art"></div>
         </div>
     </section>
 
