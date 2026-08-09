@@ -74,6 +74,22 @@
         .bio p {
             margin-bottom: 8px;
         }
+
+        .research-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin: 8px 0 4px 0;
+        }
+
+        .research-tags span {
+            background: #eef3fb;
+            color: #2c5aa0;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 999px;
+        }
         
         .section {
             margin-bottom: 18px;
@@ -131,6 +147,17 @@
             font-size: 0.95rem;
             font-weight: 600;
             margin-bottom: 4px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #555;
+            font-size: 0.68rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 999px;
+            margin-bottom: 6px;
         }
         
         .project-links {
@@ -241,6 +268,7 @@
         <div class="header-content">
             <h1>Mudra Pandya</h1>
             <div class="nav-links">
+                <a href="#research">Research</a>
                 <a href="#education">Education</a>
                 <a href="#experience">Experience</a>
                 <a href="./Mudra Pandya PhD CV.pdf" target="_blank">CV</a>
@@ -248,25 +276,83 @@
             </div>
             <p class="quote">"The best way to predict the future is to create it." — Peter Drucker</p>
             <div class="bio">
-                <p>Master's student in Information Systems at Northeastern University - Toronto, focusing on machine learning applications in healthcare and accessible technology design. Research combines technical expertise with user experience principles.</p>
-                
-                <p>Professional background includes extensive technical writing, government UX design, and full-stack development. Current work centers on inclusive AI systems and technology accessibility for diverse populations.</p>
+                <p>M.S. Information Systems candidate at Northeastern University – Toronto (GPA 4.0/4.0), pursuing doctoral research at the intersection of machine learning, responsible AI, and human-centered design. Current research assistant work with Prof. Zheng Zheng applies statistical modeling and predictive analytics to healthcare and accessibility problems.</p>
+
+                <div class="research-tags">
+                    <span>Machine Learning &amp; Deep Learning</span>
+                    <span>Responsible AI &amp; Ethics</span>
+                    <span>Human-Computer Interaction</span>
+                    <span>Data Management &amp; Engineering</span>
+                </div>
+
+                <p>Background spans full-stack development, government UX design, and applied data engineering, giving my research a practical grounding: I've built systems end-to-end, from raw data pipelines to the interfaces people actually use. Particularly motivated by assistive and accessible technology for aging populations.</p>
             </div>
         </div>
     </header>
+
+    <section id="research" class="section">
+        <h2>Research Focus</h2>
+        <p style="color:#555; font-size:0.85rem; line-height:1.5;">
+            My work sits across four connected threads: building and evaluating machine learning models 
+            (ensemble methods, deep learning), examining fairness and interpretability in AI systems, 
+            designing human-centered interfaces for underserved users, and engineering the data infrastructure 
+            that makes reliable, reproducible analysis possible. I'm especially interested in how these threads 
+            come together in assistive technology for aging and vulnerable populations.
+        </p>
+    </section>
+
+    <section id="experience" class="section experience">
+        <h2>Professional Experience</h2>
+
+        <div class="experience-item">
+            <h3>Research Assistant</h3>
+            <p class="details">Northeastern University - Toronto • with Prof. Zheng Zheng</p>
+            <p>Conduct research in machine learning applications for healthcare and accessibility technology, applying statistical modeling and predictive analytics to complex datasets. Collaborate with industry partners on automated analysis systems and research reporting, translating findings into practical, real-world solutions.</p>
+        </div>
+        
+        <div class="experience-item">
+            <h3>IT Data Co-op</h3>
+            <p class="details">Castrol - Wakefield Canada Inc • Jan 2026 – Present</p>
+            <p>Support data systems and analytics work within the IT function, applying data science coursework to enterprise operations.</p>
+        </div>
+
+        <div class="experience-item">
+            <h3>Consultant</h3>
+            <p class="details">RCIScience (Royal Canadian Institute for Science) • Oct 2024 – Jan 2026</p>
+            <p>Provided research and analytical consulting support to a science-focused nonprofit organization on a remote, part-time basis.</p>
+        </div>
+
+        <div class="experience-item">
+            <h3>System Analyst</h3>
+            <p class="details">Bayvape • Oct 2023 – Present</p>
+            <p>Analyze and maintain business systems, supporting operational reporting and process workflows on a part-time contract basis.</p>
+        </div>
+
+        <div class="experience-item">
+            <h3>Business Analyst</h3>
+            <p class="details">Prismetric Technologies Pvt Ltd • Mar 2021 – Sep 2023</p>
+            <p>Conducted technology market and competitive research, translating findings on AI adoption and digital transformation into actionable insight for enterprise stakeholders.</p>
+        </div>
+
+        <div class="experience-item">
+            <h3>Marketing Analyst</h3>
+            <p class="details">Gujarat Infotech Limited • Nov 2020 – Feb 2021</p>
+            <p>Supported user research and demographic analysis for a national pension system, applying statistical methods to improve service delivery and engagement for elderly users.</p>
+        </div>
+    </section>
 
     <section id="education" class="section education">
         <h2>Education</h2>
         
         <div class="education-item">
             <h3>M.S. in Information Systems</h3>
-            <p class="details">Northeastern University - Toronto • GPA: 4.0 • Expected 2026</p>
+            <p class="details">Northeastern University - Toronto • GPA: 3.8 • Expected 2026</p>
             <p>Data Science Engineering Methods, Advanced Machine Learning Applications, Database Architecture</p>
         </div>
         
         <div class="education-item">
             <h3>Postgraduate Diploma in Mobile Application Development</h3>
-            <p class="details">Centennial College • GPA: 4.2</p>
+            <p class="details">Centennial College • GPA: 3.9</p>
             <p>Full-stack development, mobile UX design, software engineering principles</p>
         </div>
         
@@ -277,82 +363,100 @@
         </div>
     </section>
 
-    <section id="experience" class="section experience">
-        <h2>Professional Experience</h2>
-        
-        <div class="experience-item">
-            <h3>Technical Writer & Business Research Analyst</h3>
-            <p class="details">Prismetric Technologies • 3+ Years</p>
-            <p>Published 300+ technical articles analyzing AI market trends, cybersecurity adoption patterns, and digital transformation ROI metrics. Conducted competitive analysis and technology trend research, collaborating with cross-functional teams to translate complex technical findings into actionable business insights for enterprise stakeholders. Applied data analysis techniques to evaluate technology performance and market positioning strategies.</p>
-        </div>
-        
-        <div class="experience-item">
-            <h3>UX Designer & Operations Analyst</h3>
-            <p class="details">Gujarat Infotech • Internship</p>
-            <p>Designed accessible interfaces for National Pension System serving millions of elderly users, conducting user research and demographic analysis to optimize government service delivery. Applied statistical methods to evaluate user engagement patterns and identify process bottlenecks, resulting in improved task completion rates and regulatory compliance workflows for diverse population segments.</p>
-        </div>
-        
-        <div class="experience-item">
-            <h3>Content Strategist & Data Analyst</h3>
-            <p class="details">Cross-functional Leadership</p>
-            <p>Led audience engagement analysis and performance optimization initiatives across digital platforms, utilizing quantitative metrics to drive strategic content decisions. Developed data collection frameworks for customer behavior research, implementing A/B testing methodologies and conversion optimization strategies based on user segmentation and competitive positioning analysis.</p>
-        </div>
-        
-        <div class="experience-item">
-            <h3>Research Assistant & Data Science Specialist</h3>
-            <p class="details">Northeastern University - Toronto • with Professor Zheng Zheng</p>
-            <p>Conducted advanced research in machine learning applications for healthcare and accessibility technology, applying statistical modeling and predictive analytics to complex datasets. Collaborated with industry partners to develop automated analysis systems and comprehensive research reports, translating academic findings into practical solutions for real-world applications.</p>
-        </div>
-    </section>
-
     <section id="projects" class="section projects">
-        <h2>Featured Research</h2>
+        <h2>Featured Research &amp; Projects</h2>
         
         <div class="project">
-            <h3>Healthcare AI: Machine Learning for Medical Prediction</h3>
+            <span class="project-tag">Machine Learning</span>
+            <h3>Healthcare AI: Ensemble Learning for Clinical Prediction</h3>
             <div class="project-links">
-                <a href="https://www.researchgate.net/publication/394347599_Machine_Learning_Report">Read Full Paper</a>
+                <a href="https://www.researchgate.net/publication/394347599_Machine_Learning_Report">Read Technical Report</a>
                 <a href="https://medium.com/@mudrawork27">Medium Article</a>
             </div>
             
             <img src="ml_research.png" alt="ML Research Results" class="project-image">
             
-            <p class="project-description"><strong>Challenge:</strong> Ensemble machine learning models for healthcare prediction addressing data imbalance and clinical interpretability.</p>
-            <p class="project-description"><strong>Solution:</strong> XGBoost, Random Forest, Neural Networks with SMOTE balancing and statistical validation.</p>
+            <p class="project-description"><strong>Challenge:</strong> Ensemble machine learning models for healthcare prediction, addressing data imbalance and clinical interpretability.</p>
+            <p class="project-description"><strong>Solution:</strong> XGBoost, Random Forest, and Neural Networks with SMOTE balancing and statistical validation.</p>
             
             <div class="project-results">
-                <h4>Impact & Results:</h4>
+                <h4>Impact &amp; Results:</h4>
                 <ul>
-                    <li>Achieved <strong>100% prediction accuracy</strong> using ensemble methods</li>
-                    <li>Addressed severe class imbalance in medical datasets</li>
-                    <li>Developed interpretable models for clinical applications</li>
+                    <li>Built and validated ensemble models under severe class imbalance in medical datasets</li>
+                    <li>Benchmarked multiple architectures against clinical interpretability constraints</li>
+                    <li>Developed model evaluation framework suited to real clinical decision contexts</li>
                 </ul>
             </div>
         </div>
 
         <div class="project">
-            <h3>FlowCart: Empowering Female Entrepreneurs</h3>
+            <span class="project-tag">Data Management &amp; Engineering</span>
+            <h3>Toronto Bicycle Thefts: End-to-End Data Pipeline &amp; BI Dashboard</h3>
             <div class="project-links">
-                <a href="https://github.com/yh0416/Final-Project-5100">Open in GitHub</a>
-                <a href="#">View Demo</a>
+                <a href="https://github.com/CHAITANYAGANDI/toronto-bicycle-thefts-data-pipeline">Open in GitHub</a>
             </div>
-            
-            <img src="flowcart_app.png" alt="FlowCart Application" class="project-image">
-            
-            <p class="project-description"><strong>Challenge:</strong> Delivery platform for female-driven small businesses addressing operational challenges.</p>
-            <p class="project-description"><strong>Solution:</strong> JavaFX and MySQL with role-based interfaces and real-time tracking.</p>
-            
+
+            <p class="project-description"><strong>Challenge:</strong> Ten years of open municipal crime data (39,000+ records) needed to move from raw CSV to a live, explorable analytics layer usable by non-technical stakeholders.</p>
+            <p class="project-description"><strong>Solution:</strong> Built a streaming-to-warehouse pipeline: Kafka/ZooKeeper ingestion on EC2, a six-stage Python/pandas ETL layer, S3 + RDS MySQL for storage and analytics, 15 hand-written SQL queries with pre-aggregated views, and an Amazon QuickSight dashboard with geospatial and time-series drill-downs.</p>
+
             <div class="project-results">
-                <h4>Impact & Results:</h4>
+                <h4>Impact &amp; Results:</h4>
                 <ul>
-                    <li>Streamlined operations for women entrepreneurs</li>
-                    <li>Role-based access control for different user types</li>
-                    <li>Intuitive interfaces reducing operational complexity</li>
+                    <li>Designed full data lifecycle: ingestion, cleaning, warehousing, and BI-layer modeling</li>
+                    <li>Surfaced actionable patterns, including theft concentration by location type and citywide recovery-rate trends</li>
+                    <li>Built for non-technical exploration, translating a raw open dataset into stakeholder-usable insight</li>
                 </ul>
             </div>
         </div>
 
         <div class="project">
+            <span class="project-tag">Data Management &amp; HCI</span>
+            <h3>BCMS: Human-Centered Airport Operations Database</h3>
+            <div class="project-links">
+                <a href="https://www.researchgate.net/publication/394541487_Human-Centered_Database_Design_for_Airport_Operations_A_Systems_Analysis_of_Baggage_and_Catering_Management">Read Technical Report</a>
+                <a href="Airport_Operations_Database_Design_Human_Centered_Systems_Analysis.pdf">Technical Documentation</a>
+            </div>
+            
+            <img src="airport.jpg" alt="BCMS Database Design" class="project-image">
+            
+            <p class="project-description"><strong>Challenge:</strong> Airport operations with fragmented systems causing inefficiencies in baggage handling and catering services.</p>
+            <p class="project-description"><strong>Solution:</strong> Integrated relational database with 15+ entities, real-time tracking, and user-centered design for diverse stakeholders.</p>
+            
+            <div class="project-results">
+                <h4>Impact &amp; Results:</h4>
+                <ul>
+                    <li>Designed comprehensive database architecture for complex, multi-stakeholder operations</li>
+                    <li>Real-time tracking system improving passenger experience</li>
+                    <li>Human-centered approach to technical system design at scale</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project">
+            <span class="project-tag">Human-Computer Interaction</span>
+            <h3>WeCare: Elderly Care Mobile Application with Human-Centered Design</h3>
+            <div class="project-links">
+                <a href="https://github.com/SpideyP00L/Flutter_Final_Project_WeCare">Open in GitHub</a>
+                <a href="FinalUI:UX.pdf">Design Process</a>
+            </div>
+            
+            <img src="wecare.png" alt="WeCare Mobile Application" class="project-image">
+            
+            <p class="project-description"><strong>Challenge:</strong> Designing mobile interfaces for elderly care that address complex caregiver workflows in skilled nursing facilities while prioritizing accessibility.</p>
+            <p class="project-description"><strong>Solution:</strong> Flutter-based mobile application built with empathy mapping, persona development, and iterative usability testing for caregiver task management.</p>
+            
+            <div class="project-results">
+                <h4>Impact &amp; Results:</h4>
+                <ul>
+                    <li>Developed accessibility-focused interfaces for elderly care contexts</li>
+                    <li>Applied human-centered design methodology from research through implementation</li>
+                    <li>Built task-prioritization systems addressing real caregiver workflow challenges</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project">
+            <span class="project-tag">Human-Computer Interaction</span>
             <h3>National Pension System: Accessible Design for Elderly Users</h3>
             <div class="project-links">
                 <a href="User%20Manual%20for%20online%20registration%20under%20NPS%20through%20GIL_English.pdf">User Manual</a>
@@ -365,9 +469,9 @@
             <p class="project-description"><strong>Solution:</strong> Comprehensive user manuals and accessible interface design for senior citizens.</p>
             
             <div class="project-results">
-                <h4>Impact & Results:</h4>
+                <h4>Impact &amp; Results:</h4>
                 <ul>
-                    <li>Simplified pension registration for <strong>millions of users</strong></li>
+                    <li>Simplified pension registration for millions of users</li>
                     <li>Improved elderly accessibility in government services</li>
                     <li>Clear documentation for complex regulatory processes</li>
                 </ul>
@@ -375,48 +479,23 @@
         </div>
 
         <div class="project">
-            <h3>BCMS: Human-Centered Airport Operations Database</h3>
+            <span class="project-tag">Full-Stack</span>
+            <h3>FlowCart: Empowering Female Entrepreneurs</h3>
             <div class="project-links">
-                <a href="https://www.researchgate.net/publication/394541487_Human-Centered_Database_Design_for_Airport_Operations_A_Systems_Analysis_of_Baggage_and_Catering_Management">Read Full Paper</a>
-                <a href="Airport_Operations_Database_Design_Human_Centered_Systems_Analysis.pdf">Technical Documentation</a>
+                <a href="https://github.com/yh0416/Final-Project-5100">Open in GitHub</a>
             </div>
             
-            <img src="airport.jpg" alt="BCMS Database Design" class="project-image">
+            <img src="flowcart_app.png" alt="FlowCart Application" class="project-image">
             
-            <p class="project-description"><strong>Challenge:</strong> Airport operations with fragmented systems causing inefficiencies in baggage handling and catering services.</p>
-            <p class="project-description"><strong>Solution:</strong> Integrated relational database with 15+ entities, real-time tracking, and user-centered design for diverse stakeholders.</p>
+            <p class="project-description"><strong>Challenge:</strong> Delivery platform for female-driven small businesses addressing operational challenges.</p>
+            <p class="project-description"><strong>Solution:</strong> JavaFX and MySQL with role-based interfaces and real-time tracking.</p>
             
             <div class="project-results">
-                <h4>Impact & Results:</h4>
+                <h4>Impact &amp; Results:</h4>
                 <ul>
-                    <li>Designed comprehensive <strong>database architecture</strong> for complex operations</li>
-                    <li>Real-time tracking system improving passenger experience</li>
-                    <li>Scalable design for high-traffic airport environments</li>
-                    <li>Human-centered approach to technical system design</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="project">
-            <h3>WeCare: Elderly Care Mobile Application with Human-Centered Design</h3>
-            <div class="project-links">
-                <a href="https://github.com/SpideyP00L/Flutter_Final_Project_WeCare">Open in GitHub</a>
-                <a href="#">UX Research</a>
-                <a href="FinalUI:UX.pdf">Design Process</a>
-            </div>
-            
-            <img src="wecare.png" alt="WeCare Mobile Application" class="project-image">
-            
-            <p class="project-description"><strong>Challenge:</strong> Designing mobile interfaces for elderly care that address complex caregiver workflows in skilled nursing facilities while prioritizing accessibility and user experience.</p>
-            <p class="project-description"><strong>Solution:</strong> Flutter-based mobile application with user-centered design methodology including empathy mapping, persona development, and iterative testing for caregiver task management.</p>
-            
-            <div class="project-results">
-                <h4>Impact & Results:</h4>
-                <ul>
-                    <li>Developed <strong>accessibility-focused interfaces</strong> for elderly care contexts</li>
-                    <li>Applied human-centered design methodology from research to implementation</li>
-                    <li>Created task prioritization systems addressing real caregiver workflow challenges</li>
-                    <li>Demonstrated expertise in mobile UX design for vulnerable populations</li>
+                    <li>Streamlined operations for women entrepreneurs</li>
+                    <li>Role-based access control for different user types</li>
+                    <li>Intuitive interfaces reducing operational complexity</li>
                 </ul>
             </div>
         </div>
