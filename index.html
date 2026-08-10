@@ -90,15 +90,21 @@
     /* ---------- Bio ---------- */
     .bio p { margin-bottom: 12px; font-size: 0.94rem; color: var(--ink); }
 
-    .research-line {
-        font-family: var(--serif);
-        font-style: italic;
-        color: var(--ink-soft);
-        font-size: 0.92rem;
-        margin: 4px 0 16px;
-        line-height: 1.6;
+    .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 18px 0 24px;
     }
-    .research-line b { font-style: normal; color: var(--ink); font-weight: 500; }
+    .tag {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        color: var(--ink-soft);
+        border: 1px solid var(--rule);
+        border-radius: 999px;
+        padding: 6px 14px;
+        white-space: nowrap;
+    }
 
     /* ---------- Section scaffolding ---------- */
     .section { margin-top: 44px; }
@@ -302,15 +308,20 @@
             <nav class="nav-links">
                 <a href="#research">Research</a><span class="sep">·</span><a href="#experience">Experience</a><span class="sep">·</span><a href="#education">Education</a><span class="sep">·</span><a href="#projects">Projects</a><span class="sep">·</span><a href="./Mudra Pandya PhD CV.pdf" target="_blank">CV</a><span class="sep">·</span><a href="https://www.linkedin.com/in/mudra-pandya-0739641a0/" target="_blank">LinkedIn</a>
             </nav>
+            <div class="tag-row">
+                <span class="tag">Machine Learning &amp; Deep Learning</span>
+                <span class="tag">Responsible AI &amp; Ethics</span>
+                <span class="tag">Human-Computer Interaction</span>
+                <span class="tag">Data Management &amp; Engineering</span>
+            </div>
         </div>
     </header>
 
     <hr class="top-rule">
 
     <div class="bio">
-        <p>I am a Master's student in Information Systems at Northeastern University's Toronto campus, preparing to pursue doctoral research at the intersection of machine learning, responsible AI, and human-centered design. My current work as a research assistant with Prof. Zheng Zheng applies statistical modeling and predictive analytics to problems in healthcare and accessibility.</p>
+        <p>I am a Master's student in Information Systems at Northeastern University's Toronto campus, preparing to pursue doctoral research at the intersection of machine learning, responsible AI, and human-centered design.</p>
 
-        <p class="research-line"><b>Research interests</b> — Machine Learning &amp; Deep Learning; Responsible AI &amp; Ethics; Human-Computer Interaction; Data Management &amp; Engineering.</p>
 
         <p>My background spans full-stack development, government UX design, and applied data engineering — a practical grounding that lets me move across a research problem end to end, from raw data to the interface a person actually uses. I am especially motivated by assistive and accessible technology for aging populations.</p>
     </div>
