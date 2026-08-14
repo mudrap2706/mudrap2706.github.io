@@ -127,6 +127,30 @@
         line-height: 1.7;
     }
 
+    /* ---------- Research Interests ---------- */
+    .research-questions {
+        display: grid;
+        gap: 14px;
+    }
+    .rq {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        align-items: baseline;
+    }
+    .rq-mark {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.3rem;
+        color: var(--accent);
+        line-height: 1;
+    }
+    .rq p {
+        font-size: 0.92rem;
+        color: var(--ink);
+        line-height: 1.6;
+    }
+
     /* ---------- Experience / Education ---------- */
     .entry {
         display: grid;
@@ -195,6 +219,15 @@
         line-height: 1.65;
     }
 
+    .project-relevance {
+        font-size: 0.82rem;
+        color: var(--ink-soft);
+        font-style: italic;
+        margin-top: 10px;
+        margin-bottom: 4px;
+    }
+    .project-relevance b { font-style: normal; color: var(--accent); }
+
     .project-results {
         margin-top: 10px;
         padding-left: 16px;
@@ -215,12 +248,13 @@
         margin-bottom: 3px;
     }
 
+    /* ---------- Figures (shrunk per request) ---------- */
     .fig {
         margin-top: 16px;
     }
     .fig img {
         max-width: 100%;
-        max-height: 340px;
+        max-height: 240px;
         width: auto;
         object-fit: contain;
         border: 1px solid var(--rule);
@@ -240,13 +274,14 @@
     .fig-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
+        gap: 16px;
         margin-top: 16px;
     }
-    .fig-grid .fig img { max-height: 220px; width: 100%; }
+    .fig-grid .fig img { max-height: 160px; width: 100%; }
     @media (max-width: 560px) {
         .fig-grid { grid-template-columns: 1fr; }
         .entry { grid-template-columns: 1fr; gap: 4px; }
+        .rq { grid-template-columns: 20px 1fr; }
     }
 
     /* ---------- Interests ---------- */
@@ -306,7 +341,7 @@
             <h1>Mudra Pandya</h1>
             <p class="affil">M.S. Information Systems, Northeastern University — Toronto</p>
             <nav class="nav-links">
-                <a href="#research">Research</a><span class="sep">·</span><a href="#experience">Experience</a><span class="sep">·</span><a href="#education">Education</a><span class="sep">·</span><a href="#projects">Projects</a><span class="sep">·</span><a href="./Mudra Pandya PhD CV.pdf" target="_blank">CV</a><span class="sep">·</span><a href="https://www.linkedin.com/in/mudra-pandya-0739641a0/" target="_blank">LinkedIn</a>
+                <a href="#research">Research</a><span class="sep">·</span><a href="#experience">Experience</a><span class="sep">·</span><a href="#education">Education</a><span class="sep">·</span><a href="#projects">Projects</a><span class="sep">·</span><a href="./Mudra Pandya PhD CV.pdf" target="_blank">CV</a><span class="sep">·</span><a href="https://www.linkedin.com/in/mudra-p-0739641a0/" target="_blank">LinkedIn</a>
             </nav>
             <div class="tag-row">
                 <span class="tag">Machine Learning &amp; Deep Learning</span>
@@ -322,9 +357,26 @@
     <div class="bio">
         <p>I am a Master's student in Information Systems at Northeastern University's Toronto campus, preparing to pursue doctoral research at the intersection of machine learning, responsible AI, and human-centered design.</p>
 
-
         <p>My background spans full-stack development, government UX design, and applied data engineering — a practical grounding that lets me move across a research problem end to end, from raw data to the interface a person actually uses. I'm especially interested in where these threads converge — in assistive and accessible technology for aging and vulnerable populations, where model quality, fairness, and usability all have to hold up together.</p>
     </div>
+
+    <section id="research" class="section">
+        <div class="section-label">Research Interests</div>
+        <div class="research-questions">
+            <div class="rq">
+                <span class="rq-mark">—</span>
+                <p>How can assistive AI systems remain fair, interpretable, and usable when deployed for aging or otherwise underserved populations?</p>
+            </div>
+            <div class="rq">
+                <span class="rq-mark">—</span>
+                <p>What does responsible data curation and governance look like in practice, when the people affected by a dataset rarely have a say in how it's built?</p>
+            </div>
+            <div class="rq">
+                <span class="rq-mark">—</span>
+                <p>How do we design and evaluate systems that hold model performance, fairness, and human usability to the same standard, rather than trading one off against the others?</p>
+            </div>
+        </div>
+    </section>
 
     <section id="experience" class="section">
         <div class="section-label">Experience</div>
@@ -425,6 +477,53 @@
                     <li>Developed an evaluation framework suited to real clinical decision contexts</li>
                 </ul>
             </div>
+            <p class="project-relevance"><b>Relevance —</b> The interpretability constraint here is the same problem I want to study formally: how model quality and human-usable explanation trade off in high-stakes settings.</p>
+        </div>
+
+        <div class="project">
+            <div class="project-meta">Human-Computer Interaction</div>
+            <h3>WeCare: Elderly Care Mobile Application</h3>
+            <div class="project-links">
+                <a href="https://github.com/SpideyP00L/Flutter_Final_Project_WeCare">GitHub</a><a href="FinalUI:UX.pdf">Design Process</a>
+            </div>
+            <p class="project-description"><b>Challenge —</b> Designing mobile interfaces for elderly care that address complex caregiver workflows in skilled nursing facilities while prioritizing accessibility.</p>
+            <p class="project-description"><b>Approach —</b> Flutter-based application built with empathy mapping, persona development, and iterative usability testing for caregiver task management.</p>
+            <div class="fig">
+                <img src="wecare.png" alt="WeCare mobile application">
+                <div class="fig-cap"><b>Fig. 1.</b> Caregiver task-prioritization interface.</div>
+            </div>
+            <div class="project-results">
+                <p>Outcomes</p>
+                <ul>
+                    <li>Accessibility-focused interfaces for elderly care contexts</li>
+                    <li>Human-centered design methodology applied from research through implementation</li>
+                    <li>Task-prioritization system addressing real caregiver workflow challenges</li>
+                </ul>
+            </div>
+            <p class="project-relevance"><b>Relevance —</b> Direct precedent for the accessible-AI-for-aging-populations line of research I want to pursue at the doctoral level.</p>
+        </div>
+
+        <div class="project">
+            <div class="project-meta">Human-Computer Interaction</div>
+            <h3>National Pension System: Accessible Design for Elderly Users</h3>
+            <div class="project-links">
+                <a href="User%20Manual%20for%20online%20registration%20under%20NPS%20through%20GIL_English.pdf">User Manual</a><a href="https://www.prismetric.com/case-studies/">Case Studies</a>
+            </div>
+            <p class="project-description"><b>Challenge —</b> Government system accessibility for elderly users navigating complex pension regulations.</p>
+            <p class="project-description"><b>Approach —</b> Comprehensive user manuals and accessible interface design for senior citizens.</p>
+            <div class="fig">
+                <img src="nps_interface.png" alt="NPS interface">
+                <div class="fig-cap"><b>Fig. 2.</b> Registration interface designed for elderly users.</div>
+            </div>
+            <div class="project-results">
+                <p>Outcomes</p>
+                <ul>
+                    <li>Simplified pension registration for millions of users</li>
+                    <li>Improved elderly accessibility in government services</li>
+                    <li>Clear documentation for complex regulatory processes</li>
+                </ul>
+            </div>
+            <p class="project-relevance"><b>Relevance —</b> Population-scale evidence that accessibility work translates beyond a single app into public infrastructure.</p>
         </div>
 
         <div class="project">
@@ -438,7 +537,7 @@
 
             <div class="fig">
                 <img src="dashboard_full_overview.png" alt="Dashboard overview">
-                <div class="fig-cap"><b>Fig. 1.</b> Full dashboard: KPI cockpit, geographic map, trend line, weekly risk matrix, and brand targeting, unified through a single master table for cross-filtering.</div>
+                <div class="fig-cap"><b>Fig. 3.</b> Full dashboard: KPI cockpit, geographic map, trend line, weekly risk matrix, and brand targeting, unified through a single master table for cross-filtering.</div>
             </div>
 
             <div class="project-results">
@@ -453,26 +552,27 @@
             <div class="fig-grid">
                 <div class="fig">
                     <img src="temporal_trend_analysis.png" alt="Theft trend over time">
-                    <div class="fig-cap"><b>Fig. 2.</b> Ten-year trend: peak in 2018, sustained decline since.</div>
+                    <div class="fig-cap"><b>Fig. 4.</b> Ten-year trend: peak in 2018, sustained decline since.</div>
                 </div>
                 <div class="fig">
                     <img src="geospatial_risk_map.png" alt="Geographic distribution of thefts">
-                    <div class="fig-cap"><b>Fig. 3.</b> Spatial concentration across Toronto neighborhoods.</div>
+                    <div class="fig-cap"><b>Fig. 5.</b> Spatial concentration across Toronto neighborhoods.</div>
                 </div>
                 <div class="fig">
                     <img src="behavioral_risk_heatmap.png" alt="Weekly risk heatmap">
-                    <div class="fig-cap"><b>Fig. 4.</b> Day × time-of-day risk matrix.</div>
+                    <div class="fig-cap"><b>Fig. 6.</b> Day × time-of-day risk matrix.</div>
                 </div>
                 <div class="fig">
                     <img src="top_targeted_brands.png" alt="Top targeted brands">
-                    <div class="fig-cap"><b>Fig. 5.</b> Most frequently targeted bike brands.</div>
+                    <div class="fig-cap"><b>Fig. 7.</b> Most frequently targeted bike brands.</div>
                 </div>
             </div>
 
             <div class="fig">
                 <img src="Toronto_Bicycle_Thefts_Data_Architecture.jpg" alt="Pipeline architecture">
-                <div class="fig-cap"><b>Fig. 6.</b> Pipeline architecture — Kafka/EC2 ingestion, S3 data lake, RDS MySQL analytics layer, QuickSight visualization.</div>
+                <div class="fig-cap"><b>Fig. 8.</b> Pipeline architecture — Kafka/EC2 ingestion, S3 data lake, RDS MySQL analytics layer, QuickSight visualization.</div>
             </div>
+            <p class="project-relevance"><b>Relevance —</b> The data engineering foundation underneath any responsible-AI research — models are only as accountable as the pipeline feeding them.</p>
         </div>
 
         <div class="project">
@@ -485,7 +585,7 @@
             <p class="project-description"><b>Approach —</b> Integrated relational database with 15+ entities, real-time tracking, and user-centered design for diverse stakeholders.</p>
             <div class="fig">
                 <img src="airport.jpg" alt="BCMS database design">
-                <div class="fig-cap"><b>Fig. 7.</b> Entity relationship structure for baggage and catering management.</div>
+                <div class="fig-cap"><b>Fig. 9.</b> Entity relationship structure for baggage and catering management.</div>
             </div>
             <div class="project-results">
                 <p>Outcomes</p>
@@ -498,50 +598,6 @@
         </div>
 
         <div class="project">
-            <div class="project-meta">Human-Computer Interaction</div>
-            <h3>WeCare: Elderly Care Mobile Application</h3>
-            <div class="project-links">
-                <a href="https://github.com/SpideyP00L/Flutter_Final_Project_WeCare">GitHub</a><a href="FinalUI:UX.pdf">Design Process</a>
-            </div>
-            <p class="project-description"><b>Challenge —</b> Designing mobile interfaces for elderly care that address complex caregiver workflows in skilled nursing facilities while prioritizing accessibility.</p>
-            <p class="project-description"><b>Approach —</b> Flutter-based application built with empathy mapping, persona development, and iterative usability testing for caregiver task management.</p>
-            <div class="fig">
-                <img src="wecare.png" alt="WeCare mobile application">
-                <div class="fig-cap"><b>Fig. 8.</b> Caregiver task-prioritization interface.</div>
-            </div>
-            <div class="project-results">
-                <p>Outcomes</p>
-                <ul>
-                    <li>Accessibility-focused interfaces for elderly care contexts</li>
-                    <li>Human-centered design methodology applied from research through implementation</li>
-                    <li>Task-prioritization system addressing real caregiver workflow challenges</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="project">
-            <div class="project-meta">Human-Computer Interaction</div>
-            <h3>National Pension System: Accessible Design for Elderly Users</h3>
-            <div class="project-links">
-                <a href="User%20Manual%20for%20online%20registration%20under%20NPS%20through%20GIL_English.pdf">User Manual</a><a href="https://www.prismetric.com/case-studies/">Case Studies</a>
-            </div>
-            <p class="project-description"><b>Challenge —</b> Government system accessibility for elderly users navigating complex pension regulations.</p>
-            <p class="project-description"><b>Approach —</b> Comprehensive user manuals and accessible interface design for senior citizens.</p>
-            <div class="fig">
-                <img src="nps_interface.png" alt="NPS interface">
-                <div class="fig-cap"><b>Fig. 9.</b> Registration interface designed for elderly users.</div>
-            </div>
-            <div class="project-results">
-                <p>Outcomes</p>
-                <ul>
-                    <li>Simplified pension registration for millions of users</li>
-                    <li>Improved elderly accessibility in government services</li>
-                    <li>Clear documentation for complex regulatory processes</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="project">
             <div class="project-meta">Full-Stack</div>
             <h3>FlowCart: Empowering Female Entrepreneurs</h3>
             <div class="project-links">
@@ -549,10 +605,6 @@
             </div>
             <p class="project-description"><b>Challenge —</b> Delivery platform for female-driven small businesses addressing operational challenges.</p>
             <p class="project-description"><b>Approach —</b> JavaFX and MySQL with role-based interfaces and real-time tracking.</p>
-            <div class="fig">
-                <img src="flowcart_app.png" alt="FlowCart application">
-                <div class="fig-cap"><b>Fig. 10.</b> Role-based order tracking interface.</div>
-            </div>
         </div>
     </section>
 
@@ -571,7 +623,7 @@
     <footer class="contact">
         <div>pandya.mu@northeastern.edu &nbsp;·&nbsp; Toronto, Ontario, Canada</div>
         <div class="contact-links">
-            <a href="https://www.researchgate.net/profile/Mudra-Pandya">ResearchGate</a><a href="https://medium.com/@mudrawork27">Medium</a><a href="#">Google Scholar</a><a href="https://linkedin.com/in/mudrapandya">LinkedIn</a><a href="https://github.com/mudrap2706">GitHub</a>
+            <a href="https://www.researchgate.net/profile/Mudra-Pandya">ResearchGate</a><a href="https://medium.com/@mudrawork27">Medium</a><a href="#">Google Scholar</a><a href="https://www.linkedin.com/in/mudra-p-0739641a0/">LinkedIn</a><a href="https://github.com/mudrap2706">GitHub</a>
         </div>
         <div class="copyright">© 2025 Mudra Pandya</div>
     </footer>
