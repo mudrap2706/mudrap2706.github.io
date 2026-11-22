@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mudra Pandya</title>
+<meta name="description" content="Mudra Pandya, M.S. Information Systems, Northeastern University. Research interests in accessibility and inclusive design, digital equity and information access, and the evaluation of deployed information systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -35,6 +36,7 @@
 
     a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
     a:hover { border-bottom-color: var(--accent); }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
     /* ---------- Header ---------- */
     .header {
@@ -151,7 +153,7 @@
         line-height: 1.6;
     }
 
-    /* ---------- Experience / Education ---------- */
+    /* ---------- Experience / Education / Service ---------- */
     .entry {
         display: grid;
         grid-template-columns: 108px 1fr;
@@ -248,7 +250,7 @@
         margin-bottom: 3px;
     }
 
-    /* ---------- Figures (shrunk per request) ---------- */
+    /* ---------- Figures ---------- */
     .fig {
         margin-top: 16px;
     }
@@ -331,6 +333,10 @@
     @media (max-width: 560px) {
         .header { flex-direction: column; align-items: flex-start; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+        .profile-img, .interests-grid img { transition: none; }
+    }
 </style>
 </head>
 <body>
@@ -339,15 +345,16 @@
         <img src="profile.jpg" alt="Mudra Pandya" class="profile-img">
         <div class="header-content">
             <h1>Mudra Pandya</h1>
-            <p class="affil">M.S. Information Systems, Northeastern University — Toronto</p>
+            <p class="affil">M.S. Information Systems, Northeastern University, Toronto</p>
             <nav class="nav-links">
-                <a href="#research">Research</a><span class="sep">·</span><a href="#experience">Experience</a><span class="sep">·</span><a href="#education">Education</a><span class="sep">·</span><a href="#projects">Projects</a><span class="sep">·</span><a href="./Mudra Pandya PhD CV.pdf" target="_blank">CV</a><span class="sep">·</span><a href="https://www.linkedin.com/in/mudra-p-0739641a0/" target="_blank">LinkedIn</a>
+                <a href="#research">Research</a><span class="sep">·</span><a href="#experience">Experience</a><span class="sep">·</span><a href="#education">Education</a><span class="sep">·</span><a href="#projects">Projects</a><span class="sep">·</span><a href="#service">Service</a><span class="sep">·</span><a href="./Mudra Pandya PhD CV.pdf" target="_blank">CV</a><span class="sep">·</span><a href="https://www.linkedin.com/in/mudra-p-0739641a0/" target="_blank">LinkedIn</a>
             </nav>
             <div class="tag-row">
-                <span class="tag">Machine Learning &amp; Deep Learning</span>
-                <span class="tag">Responsible AI &amp; Ethics</span>
                 <span class="tag">Human-Computer Interaction</span>
-                <span class="tag">Data Management &amp; Engineering</span>
+                <span class="tag">Accessibility &amp; Inclusive Design</span>
+                <span class="tag">Digital Equity &amp; Information Access</span>
+                <span class="tag">Responsible AI</span>
+                <span class="tag">Data Engineering</span>
             </div>
         </div>
     </header>
@@ -355,9 +362,9 @@
     <hr class="top-rule">
 
     <div class="bio">
-        <p>I am a Master's student in Information Systems at Northeastern University's Toronto campus, preparing to pursue doctoral research at the intersection of machine learning, responsible AI, and human-centered design.</p>
+        <p>I am a Master's student in Information Systems at Northeastern University in Toronto, preparing for doctoral research on whether information systems actually serve the people who rely on them, and who they quietly leave behind.</p>
 
-        <p>My background spans full-stack development, government UX design, and applied data engineering — a practical grounding that lets me move across a research problem end to end, from raw data to the interface a person actually uses. I'm especially interested in where these threads converge — in assistive and accessible technology for aging and vulnerable populations, where model quality, fairness, and usability all have to hold up together.</p>
+        <p>My path runs through practice: user research for India's National Pension System with older users in mind, accessibility work on Canadian government websites, automation for a community non-profit, and IT work supporting a mixed workforce, including non-desk staff. Across all of it, I keep returning to the same gap: between a system that works on paper and one that works for the person in front of it.</p>
     </div>
 
     <section id="research" class="section">
@@ -365,15 +372,15 @@
         <div class="research-questions">
             <div class="rq">
                 <span class="rq-mark">—</span>
-                <p>How can assistive AI systems remain fair, interpretable, and usable when deployed for aging or otherwise underserved populations?</p>
+                <p>When a system passes an accessibility check, what does it still miss about whether people can actually use it?</p>
             </div>
             <div class="rq">
                 <span class="rq-mark">—</span>
-                <p>What does responsible data curation and governance look like in practice, when the people affected by a dataset rarely have a say in how it's built?</p>
+                <p>Who gets reliable access to public information and services online, and who is left to work around the gaps?</p>
             </div>
             <div class="rq">
                 <span class="rq-mark">—</span>
-                <p>How do we design and evaluate systems that hold model performance, fairness, and human usability to the same standard, rather than trading one off against the others?</p>
+                <p>How should we evaluate AI and information systems after deployment: by who they reach and who they miss, not just by how they perform on average?</p>
             </div>
         </div>
     </section>
@@ -386,43 +393,34 @@
             <div>
                 <div class="entry-title">IT Data Co-op</div>
                 <div class="entry-org">Castrol – Wakefield Canada Inc.</div>
-                <div class="entry-desc">Support data systems and analytics work within the IT function, applying data science coursework to enterprise operations.</div>
+                <div class="entry-desc">Built a Microsoft Teams IT help bot and knowledge base for a mixed workforce, including non-desk staff; built a Power BI dashboard on helpdesk requests to see where and how often staff needed support; Azure administration. Continuing as System Operations Analyst from January 2027.</div>
             </div>
         </div>
 
         <div class="entry">
-            <div class="entry-date">Oct 2024 –<br>Jan 2026</div>
-            <div>
-                <div class="entry-title">Consultant</div>
-                <div class="entry-org">RCIScience (Royal Canadian Institute for Science)</div>
-                <div class="entry-desc">Research and analytical consulting support to a science-focused nonprofit organization, remote and part-time.</div>
-            </div>
-        </div>
-
-        <div class="entry">
-            <div class="entry-date">Oct 2023 –<br>Present</div>
+            <div class="entry-date">Oct 2023 –<br>Dec 2026</div>
             <div>
                 <div class="entry-title">System Analyst</div>
-                <div class="entry-org">Bayvape</div>
-                <div class="entry-desc">Analyze and maintain business systems, supporting operational reporting and process workflows on a part-time contract basis.</div>
+                <div class="entry-org">Bayridges</div>
+                <div class="entry-desc">E-Commerce Associate until November 2024; then designed delivery workflows that meet provincial regulations.</div>
             </div>
         </div>
 
         <div class="entry">
-            <div class="entry-date">2021 –<br>2023</div>
+            <div class="entry-date">Mar 2021 –<br>Sep 2023</div>
             <div>
-                <div class="entry-title">Business Analyst</div>
+                <div class="entry-title">Business Systems Analyst</div>
                 <div class="entry-org">Prismetric Technologies Pvt Ltd</div>
-                <div class="entry-desc">Technology market and competitive research on AI adoption and digital transformation, translated into insight for enterprise stakeholders.</div>
+                <div class="entry-desc">Promoted from Associate Business Analyst in April 2022. Researched AI adoption and digital-transformation trends; supported app and website migrations for enterprise clients.</div>
             </div>
         </div>
 
         <div class="entry">
-            <div class="entry-date">2020 –<br>2021</div>
+            <div class="entry-date">Nov 2020 –<br>Feb 2021</div>
             <div>
                 <div class="entry-title">Marketing Analyst</div>
                 <div class="entry-org">Gujarat Infotech Limited</div>
-                <div class="entry-desc">User research and demographic analysis for a national pension system, applying statistical methods to improve service delivery for elderly users.</div>
+                <div class="entry-desc">User research and use-case design for India's National Pension System, focused on making it usable for older people.</div>
             </div>
         </div>
     </section>
@@ -431,25 +429,25 @@
         <div class="section-label">Education</div>
 
         <div class="entry">
-            <div class="entry-date">2024 –<br>2027</div>
+            <div class="entry-date">Sep 2024 –<br>May 2027</div>
             <div>
                 <div class="entry-title">M.S. Information Systems</div>
-                <div class="entry-org">Northeastern University — Toronto · GPA 3.8/4.0</div>
-                <div class="entry-desc">Data Science Engineering Methods, Advanced Machine Learning Applications, Database Architecture.</div>
+                <div class="entry-org">Northeastern University, Toronto · GPA 3.81/4.0</div>
+                <div class="entry-desc">Data Science Engineering Methods; Program Structure &amp; Algorithms; Data Management &amp; Database Design; Designing Data Architecture for Business Intelligence.</div>
             </div>
         </div>
 
         <div class="entry">
-            <div class="entry-date">2023 –<br>2024</div>
+            <div class="entry-date">Sep 2023 –<br>Apr 2024</div>
             <div>
-                <div class="entry-title">Postgraduate Diploma, Mobile Application Development</div>
+                <div class="entry-title">Graduate Certificate, Mobile Applications Development</div>
                 <div class="entry-org">Centennial College · GPA 3.85/4.5</div>
-                <div class="entry-desc">Full-stack development, mobile UX design, software engineering principles.</div>
+                <div class="entry-desc">Mobile development, UI/UX design, software engineering.</div>
             </div>
         </div>
 
         <div class="entry">
-            <div class="entry-date">2017 –<br>2020</div>
+            <div class="entry-date">Jun 2019 –<br>Apr 2022</div>
             <div>
                 <div class="entry-title">Bachelor of Computer Applications</div>
                 <div class="entry-org">Gujarat University · First Class with Distinction · CGPA 7.92/10</div>
@@ -462,22 +460,42 @@
         <div class="section-label">Research &amp; Projects</div>
 
         <div class="project">
-            <div class="project-meta">Machine Learning</div>
-            <h3>Healthcare AI: Ensemble Learning for Clinical Prediction</h3>
-            <div class="project-links">
-                <a href="https://www.researchgate.net/publication/394347599_Machine_Learning_Report">Technical Report</a><a href="https://medium.com/@mudrawork27">Medium</a>
-            </div>
-            <p class="project-description"><b>Challenge —</b> Ensemble machine learning models for healthcare prediction, addressing data imbalance and clinical interpretability.</p>
-            <p class="project-description"><b>Approach —</b> XGBoost, Random Forest, and Neural Networks with SMOTE balancing and statistical validation.</p>
+            <div class="project-meta">Automation · Community Non-profit</div>
+            <h3>Payment Verification Automation: Community Family Services of Ontario</h3>
+            <p class="project-description"><b>Challenge —</b> Registrations and payments lived on two disconnected platforms, so staff matched them by hand and client confirmations took two to three days.</p>
+            <p class="project-description"><b>Approach —</b> A team project at Northeastern: a Python pipeline (Flask, IMAP, regex parsing) that reads payment emails automatically, plus a reconciliation dashboard where a person reviews the edge cases.</p>
             <div class="project-results">
                 <p>Outcomes</p>
                 <ul>
-                    <li>Built and validated ensemble models under severe class imbalance in medical datasets</li>
-                    <li>Benchmarked multiple architectures against clinical interpretability constraints</li>
-                    <li>Developed an evaluation framework suited to real clinical decision contexts</li>
+                    <li>About 90% of payments now process automatically</li>
+                    <li>Confirmations go out in real time instead of days later</li>
+                    <li>Roughly 18 staff hours saved each week, at no added operating cost</li>
                 </ul>
             </div>
-            <p class="project-relevance"><b>Relevance —</b> The interpretability constraint here is the same problem I want to study formally: how model quality and human-usable explanation trade off in high-stakes settings.</p>
+            <p class="project-relevance"><b>Relevance —</b> The cases automation can't handle, such as name mismatches and odd amounts, are exactly the people a system can miss. Designing for them is part of the work.</p>
+        </div>
+
+        <div class="project">
+            <div class="project-meta">Human-Computer Interaction</div>
+            <h3>National Pension System: Accessible Design for Older Users</h3>
+            <div class="project-links">
+                <a href="User%20Manual%20for%20online%20registration%20under%20NPS%20through%20GIL_English.pdf">User Manual</a>
+            </div>
+            <p class="project-description"><b>Challenge —</b> Older users navigating complex pension rules through a government registration system.</p>
+            <p class="project-description"><b>Approach —</b> User research, use-case design and a registration user manual written for older users.</p>
+            <div class="fig">
+                <img src="nps_interface.png" alt="NPS registration interface">
+                <div class="fig-cap"><b>Fig. 1.</b> Registration interface designed for older users.</div>
+            </div>
+            <div class="project-results">
+                <p>Outcomes</p>
+                <ul>
+                    <li>A step-by-step registration manual for older users</li>
+                    <li>Interface and use-case designs built around how older people actually register</li>
+                    <li>Clear documentation for complex regulatory processes</li>
+                </ul>
+            </div>
+            <p class="project-relevance"><b>Relevance —</b> Accessibility in public infrastructure, not just in a single app.</p>
         </div>
 
         <div class="project">
@@ -490,7 +508,7 @@
             <p class="project-description"><b>Approach —</b> Flutter-based application built with empathy mapping, persona development, and iterative usability testing for caregiver task management.</p>
             <div class="fig">
                 <img src="wecare.png" alt="WeCare mobile application">
-                <div class="fig-cap"><b>Fig. 1.</b> Caregiver task-prioritization interface.</div>
+                <div class="fig-cap"><b>Fig. 2.</b> Caregiver task-prioritization interface.</div>
             </div>
             <div class="project-results">
                 <p>Outcomes</p>
@@ -500,30 +518,7 @@
                     <li>Task-prioritization system addressing real caregiver workflow challenges</li>
                 </ul>
             </div>
-            <p class="project-relevance"><b>Relevance —</b> Direct precedent for the accessible-AI-for-aging-populations line of research I want to pursue at the doctoral level.</p>
-        </div>
-
-        <div class="project">
-            <div class="project-meta">Human-Computer Interaction</div>
-            <h3>National Pension System: Accessible Design for Elderly Users</h3>
-            <div class="project-links">
-                <a href="User%20Manual%20for%20online%20registration%20under%20NPS%20through%20GIL_English.pdf">User Manual</a><a href="https://www.prismetric.com/case-studies/">Case Studies</a>
-            </div>
-            <p class="project-description"><b>Challenge —</b> Government system accessibility for elderly users navigating complex pension regulations.</p>
-            <p class="project-description"><b>Approach —</b> Comprehensive user manuals and accessible interface design for senior citizens.</p>
-            <div class="fig">
-                <img src="nps_interface.png" alt="NPS interface">
-                <div class="fig-cap"><b>Fig. 2.</b> Registration interface designed for elderly users.</div>
-            </div>
-            <div class="project-results">
-                <p>Outcomes</p>
-                <ul>
-                    <li>Simplified pension registration for millions of users</li>
-                    <li>Improved elderly accessibility in government services</li>
-                    <li>Clear documentation for complex regulatory processes</li>
-                </ul>
-            </div>
-            <p class="project-relevance"><b>Relevance —</b> Population-scale evidence that accessibility work translates beyond a single app into public infrastructure.</p>
+            <p class="project-relevance"><b>Relevance —</b> An early example of designing for older users and their caregivers, the population at the centre of my accessibility interests.</p>
         </div>
 
         <div class="project">
@@ -556,7 +551,7 @@
                 </div>
                 <div class="fig">
                     <img src="geospatial_risk_map.png" alt="Geographic distribution of thefts">
-                    <div class="fig-cap"><b>Fig. 5.</b> Spatial concentration across Toronto neighborhoods.</div>
+                    <div class="fig-cap"><b>Fig. 5.</b> Spatial concentration across Toronto neighbourhoods.</div>
                 </div>
                 <div class="fig">
                     <img src="behavioral_risk_heatmap.png" alt="Weekly risk heatmap">
@@ -570,13 +565,22 @@
 
             <div class="fig">
                 <img src="Toronto_Bicycle_Thefts_Data_Architecture.jpg" alt="Pipeline architecture">
-                <div class="fig-cap"><b>Fig. 8.</b> Pipeline architecture — Kafka/EC2 ingestion, S3 data lake, RDS MySQL analytics layer, QuickSight visualization.</div>
+                <div class="fig-cap"><b>Fig. 8.</b> Pipeline architecture: Kafka/EC2 ingestion, S3 data lake, RDS MySQL analytics layer, QuickSight visualization.</div>
             </div>
-            <p class="project-relevance"><b>Relevance —</b> The data engineering foundation underneath any responsible-AI research — models are only as accountable as the pipeline feeding them.</p>
+            <p class="project-relevance"><b>Relevance —</b> Public data only helps people if it can be explored by those who aren't data specialists; this project was about making that possible.</p>
         </div>
 
         <div class="project">
-            <div class="project-meta">Data Management &amp; HCI</div>
+            <div class="project-meta">Information Retrieval · Open Source</div>
+            <h3>Information Retrieval Reproductions</h3>
+            <div class="project-links">
+                <a href="https://github.com/castorini/anserini/pull/3563" target="_blank">Anserini PR</a><a href="https://github.com/castorini/pyserini/pull/2807" target="_blank">Pyserini PR</a>
+            </div>
+            <p class="project-description">Reproduced documented retrieval baselines and submitted reproduction logs to the open-source Anserini and Pyserini toolkits.</p>
+        </div>
+
+        <div class="project">
+            <div class="project-meta">Data Management &amp; HCI · Course Project</div>
             <h3>BCMS: Human-Centered Airport Operations Database</h3>
             <div class="project-links">
                 <a href="https://www.researchgate.net/publication/394541487_Human-Centered_Database_Design_for_Airport_Operations_A_Systems_Analysis_of_Baggage_and_Catering_Management">Technical Report</a><a href="Airport_Operations_Database_Design_Human_Centered_Systems_Analysis.pdf">Documentation</a>
@@ -587,24 +591,55 @@
                 <img src="airport.jpg" alt="BCMS database design">
                 <div class="fig-cap"><b>Fig. 9.</b> Entity relationship structure for baggage and catering management.</div>
             </div>
-            <div class="project-results">
-                <p>Outcomes</p>
-                <ul>
-                    <li>Comprehensive database architecture for complex, multi-stakeholder operations</li>
-                    <li>Real-time tracking system improving passenger experience</li>
-                    <li>Human-centered approach to technical system design at scale</li>
-                </ul>
-            </div>
         </div>
 
         <div class="project">
-            <div class="project-meta">Full-Stack</div>
-            <h3>FlowCart: Empowering Female Entrepreneurs</h3>
+            <div class="project-meta">Full-Stack · Team Course Project</div>
+            <h3>FlowCart: Supporting Female Entrepreneurs</h3>
             <div class="project-links">
                 <a href="https://github.com/yh0416/Final-Project-5100">GitHub</a>
             </div>
             <p class="project-description"><b>Challenge —</b> Delivery platform for female-driven small businesses addressing operational challenges.</p>
             <p class="project-description"><b>Approach —</b> JavaFX and MySQL with role-based interfaces and real-time tracking.</p>
+        </div>
+    </section>
+
+    <section id="service" class="section">
+        <div class="section-label">Service &amp; Community</div>
+
+        <div class="entry">
+            <div class="entry-date">2015 –<br>Present</div>
+            <div>
+                <div class="entry-title">Volunteer and Youth Lead</div>
+                <div class="entry-org">Anoopam Mission, India and Canada</div>
+                <div class="entry-desc">ASHA health project: health, hygiene and education outreach in tribal villages, Narmada District, Gujarat. In Canada: weekend tutoring for children from immigrant families and community events.</div>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">From<br>Jan 2027</div>
+            <div>
+                <div class="entry-title">Graduate Student Ambassador</div>
+                <div class="entry-org">Northeastern University, Toronto</div>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">Oct 2024 –<br>Jan 2026</div>
+            <div>
+                <div class="entry-title">Data Migration Consultant</div>
+                <div class="entry-org">RCIScience (Royal Canadian Institute for Science)</div>
+                <div class="entry-desc">Research support and website platform migration for a science-outreach non-profit.</div>
+            </div>
+        </div>
+
+        <div class="entry">
+            <div class="entry-date">2020</div>
+            <div>
+                <div class="entry-title">COVID-19 Helpline Coordinator</div>
+                <div class="entry-org">Gujarat University</div>
+                <div class="entry-desc">Managed a student-run helpline supporting 500+ students and families during the pandemic.</div>
+            </div>
         </div>
     </section>
 
@@ -621,11 +656,11 @@
     </section>
 
     <footer class="contact">
-        <div>pandya.mu@northeastern.edu &nbsp;·&nbsp; Toronto, Ontario, Canada</div>
+        <div><a href="mailto:mudraphd27@gmail.com">mudraphd27@gmail.com</a> &nbsp;·&nbsp; Toronto, Ontario, Canada</div>
         <div class="contact-links">
-            <a href="https://www.researchgate.net/profile/Mudra-Pandya">ResearchGate</a><a href="https://medium.com/@mudrawork27">Medium</a><a href="#">Google Scholar</a><a href="https://www.linkedin.com/in/mudra-p-0739641a0/">LinkedIn</a><a href="https://github.com/mudrap2706">GitHub</a>
+            <a href="https://www.researchgate.net/profile/Mudra-Pandya">ResearchGate</a><a href="https://www.linkedin.com/in/mudra-p-0739641a0/">LinkedIn</a><a href="https://github.com/mudrap2706">GitHub</a>
         </div>
-        <div class="copyright">© 2025 Mudra Pandya</div>
+        <div class="copyright">© 2026 Mudra Pandya</div>
     </footer>
 
 </body>
